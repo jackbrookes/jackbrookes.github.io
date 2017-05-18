@@ -1,0 +1,455 @@
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+iframe{border:none;}
+html {overflow-y: scroll}
+
+html, body { margin: 0; padding: 0; height: 100%;}
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: #111;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+a:visited, a:link{
+  color: inherit;
+}
+
+.intrinsic-container {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+}
+
+/* 16x9 Aspect Ratio */
+.intrinsic-container-16x9 {
+  padding-bottom: 56.25%;
+}
+
+/* 4x3 Aspect Ratio */
+.intrinsic-container-4x3 {
+  padding-bottom: 75%;
+}
+
+.intrinsic-container iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+ul#navbar {
+  list-style-type: none;
+  padding: 25px 0px 25px 0px;
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+li.navbutton a, ul#navbar li#spacer{
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  border-bottom: solid #ccc 1px;
+}
+
+li.navbutton a {
+  float: left;
+}
+
+ul#navbar li#spacer {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+li.navbutton a{
+  width: auto;
+  height: auto;
+  text-decoration: none;
+  color: #777;
+}
+
+li.navbutton a:hover, li.navbutton a.current{
+
+  border-bottom: solid #4180AB 4px;
+  padding-bottom: 11px;
+
+}
+
+li.navbutton a:hover{
+  color: #4180AB;
+  transition: all .15s ease-in-out;
+}
+
+a.caption{
+  display: block;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  background-color: #f8f8f8;
+  padding: 5px 10px;
+  text-align: right;
+  color: #777;
+}
+a.caption:hover{
+  background-color: #f0f0f0;
+}
+
+
+#profile-card-container{
+  margin: 20px auto 15px auto;
+  max-width: 370px;
+}
+
+#p5-container{
+  margin: 0 auto -1 auto;
+  height: 250px;
+}
+
+img.profile-card-pic{
+  float: left;
+  max-width: 110px;
+}
+
+#profile-card-infobox{
+  overflow: hidden;
+  padding: 10px 15px;
+}
+
+.profile-card-name, .profile-card-subtitle{
+  font-weight: 700;
+}
+
+.profile-card-name{
+  margin: 6px 0;
+  font-size: 32px;
+}
+
+.profile-card-subtitle{
+  margin: 7px 0;
+  font-size: 24px;
+}
+
+
+#centred-container{
+  margin: 0 auto;
+  max-width: 640px;
+  min-width: 320px;
+  min-height: 100%;
+  padding-bottom: 230px;
+}
+
+#content{
+  overflow:auto;
+  padding-bottom: 20px;
+  overflow-x: hidden;
+}
+
+pre {
+  min-width: 100%;
+  overflow-x: auto;
+  padding: 10px;
+}
+
+#content p, #content .card p{
+  font-size: 18px;
+  text-decoration: none;
+}
+
+#content p img {
+  max-width:100%;
+  max-height:1500px;
+  margin: auto;
+  display: block;
+}
+
+.post{
+  text-decoration: none;
+  height: 19px;
+  display: block;
+  overflow: hidden;
+  font-weight: 700;
+}
+
+.card{
+  elementoverflow: hidden;
+  padding: 10px 0 0 0;
+}
+
+.cf:before,
+.cf:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+/**
+* For IE 6/7 only
+* Include this rule to trigger hasLayout and contain floats.
+*/
+.cf {
+  *zoom: 1;
+}
+
+h2 {
+  margin: 25px 0 20px 0;
+  padding-bottom: 6px;
+  border-bottom: solid 1px #f0f0f0;
+}
+
+h2 a{
+  color: inherit;
+  text-decoration: none;
+}
+
+p + h2 {
+  padding-top: 25px;
+}
+
+/*h2.section-title a:after{
+  font-size: 20px;
+  padding-left: 9px;
+  content: ">";
+  font-weight: 300;
+  color: #ccc;
+}*/
+
+
+ul.tags, ul.contact{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-weight: 700;
+}
+
+ul.contact li{
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+ul.contact li a{
+  text-decoration: none;
+}
+
+ul.tags li{
+  /*display: inline-block;*/
+  margin: 1px 0;
+  font-size: 14px;
+}
+
+h2.techused{
+  font-size: 16px;
+  margin: 0 0 7px 0;
+}
+
+.techbox{
+  background-color: #f8f8f8;
+  padding: 10px;
+  margin: 25px 0;
+}
+
+.techbox ul li{
+  float: left;
+  margin-right: 9px;
+}
+
+ul.horizontal{
+  height: 25px;
+  min-width: 100%;
+  overflow: hidden;
+}
+
+ul.horizontal li{
+  float: left;
+  margin-right: 9px;
+}
+
+ul.tags a{
+  display: block;
+  padding: 4px 0px;
+  text-decoration: none;
+}
+
+ul.tags li a {
+  color: #111;
+}
+
+ul.tags li span{
+  vertical-align: middle;
+}
+
+img.tag-icon{
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  margin: 0 4px;
+  overflow: hidden;
+}
+
+.post-card{
+  width: calc(50% - 5px);
+  float: left;
+  background-color: #E4EBF0;
+  padding: 14px 12px 30px 12px;
+  margin: 5px 0;
+  height: 145px;
+}
+
+.post-card:hover{
+  border-bottom: solid #4180AB 4px;
+  padding-bottom: 10px;
+  transition: all .15s ease-in-out;
+}
+
+a:nth-of-type(2n+1) .post-card{
+  margin-left: 0;
+  margin-right: 5px;
+}
+a:nth-of-type(2n) .post-card{
+  margin-left: 5px;
+  margin-right: 0;
+}
+
+h1.title{
+  margin: 15px 0;
+}
+
+p.small{
+  font-size: 13px !important;
+  height: 50px;
+  overflow:hidden;
+  font-style: italic;
+}
+
+p.summary{
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+a.github{
+  font-size: 0.9em;
+  display: inline-block;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 700;
+}
+
+a.github:hover{
+  color: #4180AB;
+}
+
+.arrow:after, a.arrow::after{
+  padding-left: 0.3em;
+  font-size: 0.8em;
+  content: ">";
+  opacity: 0.7;
+}
+
+#footer-container{
+  text-transform: uppercase;
+  padding: 20px 0;
+  background-color: #E4EBF0;
+  color: #4180AB;
+  font-size: 12px;
+  font-weight: bold;
+
+  position: relative;
+  margin-top: -220px; /* negative value of footer height */
+  height: 220px;
+}
+
+#footer{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 640px;
+}
+
+ul.footer-ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul.footer-ul li{
+  padding: 5px 0;
+}
+
+ul.footer-ul li a{
+  text-decoration: none;
+}
+
+ul.footer-ul li a:hover{
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 650px) {
+
+  ul#navbar {
+    padding-top: 0px;
+  }
+
+  #content, #footer {
+    padding: 0 15px;
+  }
+
+  #content p, #content .card p{
+    font-size: 16px;
+  }
+
+  .post-card{
+    width: calc(100% - 10px);
+  }
+
+
+  a:nth-of-type(2n) .post-card, a:nth-of-type(2n+1) .post-card{
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .techbox{
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+}
+
+@media only screen and (max-width: 420px) {
+  #profile-card-container{
+    text-align: center;
+  }
+
+  img.profile-card-pic{
+    float: none;
+  }
+
+  h1#profile-card-name{
+    font-size: 24px;
+  }
+
+  h2#profile-card-subtitle{
+    font-size: 20px;
+  }
+
+  #content p, #content .card p{
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  #footer-container{
+    width: 320px;
+  }
+}
