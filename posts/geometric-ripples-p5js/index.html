@@ -30,7 +30,6 @@
 
 <p class="summary">
   Inspired by openprocessing.org, I made a looping geometric animation in p5js.  
-
   
 </p>
 
@@ -116,15 +115,6 @@
     <span class="nx">ellipse</span><span class="p">(</span><span class="nx">ps</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="nx">ps</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="nx">d</span><span class="o">*</span><span class="nx">op</span><span class="p">,</span> <span class="nx">d</span><span class="o">*</span><span class="nx">op</span><span class="p">);</span>
   <span class="p">}</span>
 
-<span class="p">}</span>
-
-<span class="kd">function</span> <span class="nx">colorAlpha</span><span class="p">(</span><span class="nx">aColor</span><span class="p">,</span> <span class="nx">alpha</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">color</span><span class="p">(</span><span class="nx">aColor</span><span class="p">);</span>
-  <span class="k">return</span> <span class="nx">color</span><span class="p">(</span><span class="s1">&#39;rgba(&#39;</span> <span class="o">+</span>  <span class="p">[</span><span class="nx">red</span><span class="p">(</span><span class="nx">c</span><span class="p">),</span> <span class="nx">green</span><span class="p">(</span><span class="nx">c</span><span class="p">),</span> <span class="nx">blue</span><span class="p">(</span><span class="nx">c</span><span class="p">),</span> <span class="nx">alpha</span><span class="p">].</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="kd">function</span> <span class="nx">clamp</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="nx">min</span><span class="p">,</span> <span class="nx">max</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">num</span> <span class="o">&lt;=</span> <span class="nx">min</span> <span class="o">?</span> <span class="nx">min</span> <span class="o">:</span> <span class="nx">num</span> <span class="o">&gt;=</span> <span class="nx">max</span> <span class="o">?</span> <span class="nx">max</span> <span class="o">:</span> <span class="nx">num</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kd">function</span> <span class="nx">spacedSin</span><span class="p">(</span><span class="nx">x</span><span class="p">){</span>
