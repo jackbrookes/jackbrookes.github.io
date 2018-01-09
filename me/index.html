@@ -4,41 +4,55 @@
 
     
 
-
-
     <meta name="description" content=" - Jack Brookes">
 
-    <link rel="shortcut icon" href="/static/me_circ.png">
+    <link rel="shortcut icon" type="image/png" href="/static/me_circ.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700,300i,400i,700i|Open+Sans:400,400i,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i|Roboto+Mono:400,400i,700" rel="stylesheet">
     <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet" href="/pygments.css">
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@jackbrookes" />
-    <meta name="twitter:title" content="About me" />
+    <meta name="twitter:title" content="About" />
     <meta name="twitter:description" content=" - Jack Brookes" />
 
 
 
-    <title>About me - Jack Brookes</title>
+    <title>About - Jack Brookes</title>
 
     
   </head>
   <body>
-    <div id="centred-container">
-      <ul id="navbar">
-        <li class="navbutton"><a href="/" >Home</a></li>
-        <li class="navbutton"><a href="/posts/" >Posts</a></li>
-        <li class="navbutton"><a href="/publications/" >Publications</a></li>
-        <li class="navbutton"><a href="/about/" >About</a></li>
-        <li class="navbutton"><a href="/contact/" >Contact</a></li>
-        <li id="spacer">&nbsp;</li>
+    <div id="navbar-container" class="mobile-padded">
+      <ul id="navbar" class="mobile-centered">
+        <li class="navbutton">
+          <a href="/"  class="sweep">Home</a>
+        </li>
+        <li class="navbutton">
+          <a href="/projects/"  class="sweep">Projects</a>
+        </li>
+        <li class="navbutton">
+          <a href="/posts/"  class="sweep">Posts</a>
+        </li>
+        <li class="navbutton">
+          <a href="/publications/"  class="sweep">Publications</a>
+        </li>
+        <li class="navbutton">
+          <a href="/about/" class="sweep current"  class="sweep">About</a>
+        </li>
+        <li class="navbutton">
+          <a href="/contact/"  class="sweep">Contact</a>
+        </li>
+      
       </ul>
-      <div id="content">
-        
- <div class="card">
+    </div>
+    <div id="centred-container">
+      <div id="main">
+        <div id="content">
+          
+  <div class="card">
 
   <div id="profile-card-container">
     <img src="/static/me_circ.png", class="profile-card-pic" />
@@ -48,21 +62,45 @@
     </div>
   </div>
 </div>
+  <div class="card">
+  
+  <h2 class="section-title">
+    
+      About
+    
+  </h2>
 
+    <div class="inner-card">
+  <p>
+    I'm a graduate of Mechanical Engineering, and now a PhD candidate in the area of percpetual science - particularly how haptics and virtual reality can affect motor learning. Some of my interests:
+
+    <ul>
+      <li> Virtual reality, and the challenges and opportunities it brings (technical, perceptual, social, or otherwise) </li>
+      <li> Data processing, visualisation and analysis </li>
+      <li> Coding with craftsmanship: producing efficient, intuitive, and maintainable software </li>
+      <li> Design and user experience </li>
+    </ul>
+  </p>
+
+  <p style="text-align: center; padding-top:1em;">
+    <a href="/static/jack-brookes-cv.pdf" class="download sweep" download>
+      <i class="fa fa-file-text fa-fw" aria-hidden="true"></i>View CV (.pdf)
+    </a>
+  </p>
+  </div>
+</div>
+
+        </div>
       </div>
+    </div>
 
     </div>
     <div id="footer-container">
-      <div id="footer">
+      <div id="footer" class="mobile-centered">
         
         <ul class="footer-ul">
-          <li style="color: #8AB3CF; margin-bottom: 5px;">© Jack Brookes 2017</li>
-          <li><a href="/">Home</a></li>
-          <li><a href="/posts/">Posts</a></li>
-          <li><a href="/publications/">Publications</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/contact/">Contact</a></li>
-          <li><a onclick="topFunction()" style="cursor:pointer">Back to top <i class="fa fa-fw fa-chevron-up" aria-hidden="true"></i></a></li>
+          <li> <i class="fa fa-copyright" aria-hidden="true"></i> Jack Brookes 2018</li>
+          <li><a onclick="topFunction()" style="cursor:pointer">Back to top <i class="fa fa-fw fa-long-arrow-up" aria-hidden="true"></i></a></li>
         </ul>
         
       </div>

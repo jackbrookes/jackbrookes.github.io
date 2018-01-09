@@ -4,14 +4,12 @@
 
     
 
-
-
     <meta name="description" content=" - Jack Brookes">
 
-    <link rel="shortcut icon" href="/static/me_circ.png">
+    <link rel="shortcut icon" type="image/png" href="/static/me_circ.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700,300i,400i,700i|Open+Sans:400,400i,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i|Roboto+Mono:400,400i,700" rel="stylesheet">
     <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet" href="/pygments.css">
 
@@ -31,27 +29,47 @@
     
   </head>
   <body>
-    <div id="centred-container">
-      <ul id="navbar">
-        <li class="navbutton"><a href="/" class="current">Home</a></li>
-        <li class="navbutton"><a href="/posts/" >Posts</a></li>
-        <li class="navbutton"><a href="/publications/" >Publications</a></li>
-        <li class="navbutton"><a href="/about/" >About</a></li>
-        <li class="navbutton"><a href="/contact/" >Contact</a></li>
-        <li id="spacer">&nbsp;</li>
+    <div id="navbar-container" class="mobile-padded">
+      <ul id="navbar" class="mobile-centered">
+        <li class="navbutton">
+          <a href="/" class="sweep current"  class="sweep">Home</a>
+        </li>
+        <li class="navbutton">
+          <a href="/projects/"  class="sweep">Projects</a>
+        </li>
+        <li class="navbutton">
+          <a href="/posts/"  class="sweep">Posts</a>
+        </li>
+        <li class="navbutton">
+          <a href="/publications/"  class="sweep">Publications</a>
+        </li>
+        <li class="navbutton">
+          <a href="/about/"  class="sweep">About</a>
+        </li>
+        <li class="navbutton">
+          <a href="/contact/"  class="sweep">Contact</a>
+        </li>
+      
       </ul>
-      <div id="content">
-        
+    </div>
+    <div id="centred-container">
+      <div id="main">
+        <div id="content">
+          
   <div class="card">
+  
   <h2 class="section-title">
-    
-      <a class="arrow" href="/about/">About</a>
-    
+    <a class="arrow" href="/about/">
+      About
+    </a>
   </h2>
+  
 
-  <p class="about">
-    VR enthusiast, engineer, and perceptual science PhD candidate.
-  </p>
+  <div class="inner-card">
+    <p class="about">
+      VR enthusiast, engineer, and perceptual science PhD candidate.
+    </p>
+  </div>
 </div>
   
     <div class="card cf">
@@ -61,202 +79,71 @@
     
   </h2>
 
-
+  <div class="inner-card">
+    
+      <a class="post-card sweep" href="/posts/niweek-2016-student-competition/">
   
-    <a href="/posts/niweek-2016-student-competition/">
-      <div class="post-card">
-  <span class="post" href="/posts/niweek-2016-student-competition/">
+  <span class="post">
     NI 2016 Student Competition
-  </span>
+  </span>Winning the worldwide NI Student Competition and presenting at NI Week 2016 in Austin, TX.
 
-  <p class="small">
-    Winning the worldwide NI Student Competition and presenting at NI Week 2016 in Austin, TX.
-
-  </p>
-
-  <ul class="tags horizontal">
+</a>
     
-      
-        <li>
-    <span class="tag">
-      <i class="fa fa-users fa-fw"
-      style="color:#f65314"
-      aria-hidden="true"></i>
-      Presentation
-    </span>
-</li>
-      
-    
-      
-        <li>
-    <span class="tag">
-      <i class="fa fa-user fa-fw"
-      style="color:#553a99"
-      aria-hidden="true"></i>
-      Personal
-    </span>
-</li>
-      
-    
-      
-        <li>
-    <span class="tag">
-      <i class="fa fa-cogs fa-fw"
-      style="color:#5d5c5d"
-      aria-hidden="true"></i>
-      Engineering
-    </span>
-</li>
-      
-    
-  </ul>
-</div>
-    </a>
+      <a class="post-card sweep" href="/posts/labview-trilateration-algorithm/">
   
-    <a href="/posts/bouncebeat-vr-musical-sandbox-game/">
-      <div class="post-card">
-  <span class="post" href="/posts/bouncebeat-vr-musical-sandbox-game/">
-    BounceBeat - Free VR Music Game
-  </span>
-
-  <p class="small">
-    Virtual reality musical physics-based sandbox game, made in Unity, free and open source
-
-  </p>
-
-  <ul class="tags horizontal">
-    
-      
-        <li>
-    <span class="tag">
-      <i class="fa fa-gamepad fa-fw"
-      style="color:#00cccc"
-      aria-hidden="true"></i>
-      Unity
-    </span>
-</li>
-      
-    
-      
-        <li>
-    <span class="tag">
-      <i class="fa fa-code fa-fw"
-      style="color:#178600"
-      aria-hidden="true"></i>
-      C#
-    </span>
-</li>
-      
-    
-      
-        <li>
-    <span class="tag">
-      <i class="fa fa-eye fa-fw"
-      style="color:#4a1a84"
-      aria-hidden="true"></i>
-      VR
-    </span>
-</li>
-      
-    
-  </ul>
-</div>
-    </a>
-  
-    <a href="/posts/labview-trilateration-algorithm/">
-      <div class="post-card">
-  <span class="post" href="/posts/labview-trilateration-algorithm/">
+  <span class="post">
     Trilateration algorithm
-  </span>
-
-  <p class="small">
-    Easy-to-use LabVIEW VI for performing trilateration calculations.
-  </p>
-
-  <ul class="tags horizontal">
+  </span>Easy-to-use LabVIEW VI for performing trilateration calculations.
+</a>
     
-      
-        <li>
-    <span class="tag">
-      <i class="fa fa-code fa-fw"
-      style="color:#065fa3"
-      aria-hidden="true"></i>
-      LabVIEW
-    </span>
-</li>
-      
-    
-      
-        <li>
-    <span class="tag">
-      <i class="fa fa-superscript fa-fw"
-      style="color:#f65a5b"
-      aria-hidden="true"></i>
-      Mathematics
-    </span>
-</li>
-      
-    
-  </ul>
-</div>
-    </a>
-  
-    <a href="/posts/unity-experiment-manager/">
-      <div class="post-card">
-  <span class="post" href="/posts/unity-experiment-manager/">
-    Unity Experiment Manager
-  </span>
-
-  <p class="small">
-    An OOP focused C# package allowing for easy management of experiments in Unity
-
-  </p>
-
-  <ul class="tags horizontal">
-    
-      
-        <li>
-    <span class="tag">
-      <i class="fa fa-gamepad fa-fw"
-      style="color:#00cccc"
-      aria-hidden="true"></i>
-      Unity
-    </span>
-</li>
-      
-    
-      
-        <li>
-    <span class="tag">
-      <i class="fa fa-code fa-fw"
-      style="color:#178600"
-      aria-hidden="true"></i>
-      C#
-    </span>
-</li>
-      
-    
-      
-        <li>
-    <span class="tag">
-      <i class="fa fa-eye fa-fw"
-      style="color:#4a1a84"
-      aria-hidden="true"></i>
-      VR
-    </span>
-</li>
-      
-    
-  </ul>
-</div>
-    </a>
-  
+  </div>
 </div>
 
 
 
 
-    <a href="/posts/" class="seemore">See more</a>
+    <a href="/posts/" class="seemore sweep">See more</a>
+
+    <div class="card cf">
+  <h2 class="section-title">
+    
+      <a class="arrow" href="/projects/">Projects</a>
+    
+  </h2>
+
+  <div class="inner-card">
+    
+        <a  style="background-image: url('/static/blog-images/bouncebeat-logo.png');"
+    class="project-card sweepparent"
+    href="/projects/bouncebeat-vr-musical-sandbox-game/">
+    <div class="project sweepchild">
+        BounceBeat - Free VR Music Game
+    </div>
+</a>
+    
+        <a  style="background-image: url('/static/blog-images/expmngr-banner.png');"
+    class="project-card sweepparent"
+    href="/projects/unity-experiment-manager/">
+    <div class="project sweepchild">
+        ExpMngr - Experiment Manager for Unity
+    </div>
+</a>
+    
+        <a  style="background-image: url('/static/blog-images/smb-banner.png');"
+    class="project-card sweepparent"
+    href="/projects/simodont-custom-model-builder/">
+    <div class="project sweepchild">
+        Simodont Custom Model Builder GUI
+    </div>
+</a>
+    
+  </div>
+</div>
+
+
+
+
+    <a href="/projects/" class="seemore sweep">See more</a>
 
   
   <div class="card">
@@ -266,48 +153,45 @@
     
   </h2>
 
-  <p>
+    <div class="inner-card">
     <ul class="contact">
 
       <li title="twitter">
-        <a href="http://twitter.com/jackbrookes" class="arrow">
+        <a href="http://twitter.com/jackbrookes">
           <i class="fa fa-twitter fa-fw" aria-hidden="true" style="color:#1da1f2"></i>
           @jackbrookes
         </a>
      </li>
 
       <li title="email">
-        <a href='mailto&#58;j%62ro%6Fke%7&#51;%31%38%37&#64;gmai%6C&#46;&#99;om' class="arrow">
+        <a href='mailto&#58;j%62ro%6Fke%7&#51;%31%38%37&#64;gmai%6C&#46;&#99;om'>
           <i class="fa fa-envelope fa-fw" aria-hidden="true" style="color:#ffa930"></i>
           j&#98;&#114;&#111;okes187&#64;gmail&#46;&#99;om
         </a>
       </li>
 
       <li title="github">
-        <a href="http://github.com/jackbrookes" class="arrow">
+        <a href="http://github.com/jackbrookes">
           <i class="fa fa-github fa-fw" aria-hidden="true" style="color:#4078c0"></i>
           jackbrookes
         </a>
       </li>
 
     </ul>
-  </p>
+  </div>
 </div>
 
+        </div>
       </div>
+    </div>
 
     </div>
     <div id="footer-container">
-      <div id="footer">
+      <div id="footer" class="mobile-centered">
         
         <ul class="footer-ul">
-          <li style="color: #8AB3CF; margin-bottom: 5px;">© Jack Brookes 2017</li>
-          <li><a href="/">Home</a></li>
-          <li><a href="/posts/">Posts</a></li>
-          <li><a href="/publications/">Publications</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/contact/">Contact</a></li>
-          <li><a onclick="topFunction()" style="cursor:pointer">Back to top <i class="fa fa-fw fa-chevron-up" aria-hidden="true"></i></a></li>
+          <li> <i class="fa fa-copyright" aria-hidden="true"></i> Jack Brookes 2018</li>
+          <li><a onclick="topFunction()" style="cursor:pointer">Back to top <i class="fa fa-fw fa-long-arrow-up" aria-hidden="true"></i></a></li>
         </ul>
         
       </div>
