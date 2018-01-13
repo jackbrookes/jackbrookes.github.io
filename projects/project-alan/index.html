@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+  <head>
+
+    
+<meta property="og:image" content="/static/blog-images/alan-banner.png" />
+<meta name="twitter:image" content="/static/blog-images/alan-banner.png" /> 
+
+    <meta name="description" content="Winning the worldwide NI Student Competition and presenting at NI Week 2016 in Austin, TX.
+ - Jack Brookes">
+
+    <link rel="shortcut icon" type="image/png" href="/static/me_circ.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i|Roboto+Mono:400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/pygments.css">
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@jackbrookes" />
+    <meta name="twitter:title" content="Project ALAN" />
+    <meta name="twitter:description" content="Winning the worldwide NI Student Competition and presenting at NI Week 2016 in Austin, TX.
+ - Jack Brookes" />
+
+
+
+    <title>Project ALAN - Jack Brookes</title>
+
+    
+
+  </head>
+  <body>
+    <div id="navbar-container" class="mobile-padded">
+      <ul id="navbar" class="mobile-centered">
+        <li class="navbutton">
+          <a href="/"  class="sweep">Home</a>
+        </li>
+        <li class="navbutton">
+          <a href="/projects/" class="sweep current"  class="sweep">Projects</a>
+        </li>
+        <li class="navbutton">
+          <a href="/posts/"  class="sweep">Posts</a>
+        </li>
+        <li class="navbutton">
+          <a href="/publications/"  class="sweep">Publications</a>
+        </li>
+        <li class="navbutton">
+          <a href="/about/"  class="sweep">About</a>
+        </li>
+        <li class="navbutton">
+          <a href="/contact/"  class="sweep">Contact</a>
+        </li>
+      
+      </ul>
+    </div>
+    <div id="centred-container">
+      <div id="main">
+        <div id="content">
+          
+
+
+    <img class="project-banner" src= "/static/blog-images/alan-banner.png" />
+
+
+<h1 class="title">Project ALAN</h1>
+<div class="inner-card">
+    <p class="date">
+        2016-08-16
+    </p>
+
+    <p class="summary">
+        Winning the worldwide NI Student Competition and presenting at NI Week 2016 in Austin, TX.
+ 
+    </p>
+
+
+    <p><a href="https://decibel.ni.com/content/docs/DOC-46580">NI Community Page</a></p>
+<h2>Background</h2>
+<p>Project Advanced upper-Limb Autonomous Neuro-rehabilitation (ALAN) was part of a multidisciplinary Master's project a Leeds University. ALAN was tasked with bringing rehabilitation robotics to the mainstream. This would be achieved with the creation of two devices.</p>
+<h2>MyPAM</h2>
+<p>Rehabilitation robotics has the potential to save huge amounts of time and money by providing physical assistance during the re-learning of motor skills in post-stroke patients. The MyPAM is an attempt at a home-based device, which includes a 2DOF robotic arm, and a PC &amp; Monitor which can be used to play games and activities. These games and activities provide incentives for patients to continue to play and improve their skill.</p>
+<p><img alt="MyPAM" src="/static/blog-images/mypam.jpg" />  </p>
+<h3>My contributions</h3>
+<ul>
+<li>Local database of user's progress in the rehabilitation program. This database fetches tasks from a http JSON API which can allow physiotherapists to assign targets for patients.</li>
+<li>Inverse kinematics for the robot</li>
+<li>PID tuning for the robot</li>
+<li>Partial programming of FPGA controller</li>
+<li>Standard communication protocol between the robot controller and Unity3D based games</li>
+<li>Implementation of a basic game "Snake"</li>
+</ul>
+<h2>ALAN-Arm</h2>
+<p>Robotic rehabilitation devices are often developed in a research setting, and unproven in terms of safety and reliability in the healthcare setting. The ALAN arm is a robotic arm device built to automate and standardise the testing procedure of devices like the MyPAM. The device can autonomously play Unity games developed for the MyPAM protocol to stress-test software and hardware of the devices. It can also be used to accurately re-trace a movement path, allowing for benchmarking of measurement systems of rehab robots. It features 3 independent 2DOF robots in a "puppet" form factor. </p>
+<p><img alt="ALAN Arm" src="/static/blog-images/alan-arm.jpg" />  </p>
+<h3>My contributions</h3>
+<ul>
+<li>Inverse kinematics for shoulder, wrist &amp; elbow</li>
+<li>Developed a biologically inspired human-arm model which generates plausible joint configurations for demand positions</li>
+<li>Implementation of master-slave control scheme where the shoulder and elbow are driven by hand/wrist position </li>
+<li>PID tuning for the 3 robots</li>
+<li>Partial programming of FPGA controller</li>
+<li>Implementation of communication with Unity3D game</li>
+<li>Thorough testing of path reproducibility and frequency response</li>
+</ul>
+<h2>Result</h2>
+<p>From this project I achieved a 1st class honours in MEng Mechanical Engineering. The project was recognised by National Instruments and awarded 1st place in their annual student competition. We were invited to present our devices in the expo hall and on stage at NIWeek 2016. </p>
+<p><a href="https://www.youtube.com/watch?v=8WbgjWfF17g">Watch the presentation on YouTube</a></p>
+<p>I also published a paper detailing the Alan-Arm design.</p>
+<ul>
+<li><strong>J. Brookes</strong>, M. Kuznecovs, M. Kanakis, A. Grigals, M. Narvidas, J. Gallagher, M. Levesley, <em>"Robots testing robots: ALAN-Arm, a humanoid arm for the testing of robotic rehabilitation systems"</em> 2017 International Conference on Rehabilitation Robotics (ICORR), London, 2017, pp. 676-681. <a href="http://doi.org/10.1109/ICORR.2017.8009326">http://doi.org/10.1109/ICORR.2017.8009326</a></li>
+</ul>
+</div>
+
+<div class="techbox cf">
+    <h2 class="techused">Filed under:</h3>
+        <ul class="tags">
+              <li>
+    <span class="tag">
+      <i class="fa fa-users fa-fw"
+      style="color:#f65314"
+      aria-hidden="true"></i>
+      Presentation
+    </span>
+</li>    <li>
+    <span class="tag">
+      <i class="fa fa-cogs fa-fw"
+      style="color:#5d5c5d"
+      aria-hidden="true"></i>
+      Engineering
+    </span>
+</li>    <li>
+    <span class="tag">
+      <i class="fa fa-code fa-fw"
+      style="color:#065fa3"
+      aria-hidden="true"></i>
+      LabVIEW
+    </span>
+</li>  
+        </ul>
+</div>
+
+
+        </div>
+      </div>
+    </div>
+
+    </div>
+    <div id="footer-container">
+      <div id="footer" class="mobile-centered">
+        
+        <ul class="footer-ul">
+          <li> <i class="fa fa-copyright" aria-hidden="true"></i> Jack Brookes 2018</li>
+          <li><a onclick="topFunction()" style="cursor:pointer">Back to top <i class="fa fa-fw fa-long-arrow-up" aria-hidden="true"></i></a></li>
+        </ul>
+        
+      </div>
+    </div>
+
+    <script>
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    </script>
+
+
+  </body>
+</html>
