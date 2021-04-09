@@ -10,6 +10,6 @@ I'm Jack, a programmer & researcher at UCL. I have a PhD in the area of cognitiv
 
 * Coding with craftsmanship: producing efficient, intuitive, and maintainable software
 * The study of human cognition, perception, & action
-* Data processing, modelling, visualisation and analysis
+* Data processing, modelling, visualisation, and analysis
 * Human factors, design and user experience
 * Immersive technologies, and the challenges and opportunities they bring (technical, social, or otherwise)
