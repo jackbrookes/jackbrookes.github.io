@@ -2,64 +2,51 @@
 <html>
 
 <head>
-
-    
-
-    <meta name="description" content=" - Jack Brookes">
-
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="/static/pygments.css">
     <link rel="shortcut icon" type="image/png" href="/static/me_circ.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,700,700i|Roboto+Mono:400,400i,700" rel="stylesheet">
-    <link rel="stylesheet" href="/static/style.css">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Homepage of Jack Brookes - Jack Brookes">
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@jackbrookes" />
-    <meta name="twitter:title" content="
-  My work
-" />
-    <meta name="twitter:description" content=" - Jack Brookes" />
+    <meta name="twitter:title" content="My Work - Jack Brookes" />
+    <meta name="twitter:description" content="Homepage of Jack Brookes - Jack Brookes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+    <title>My Work - Jack Brookes</title>
 
-    <title>
-  My work
- - Jack Brookes</title>
-
-    
 </head>
 
 <body>
-    <div id="navbar-container" class="mobile-padded">
-        <ul id="navbar">
-            <li class="navbutton">
-                <a href="/"  class="sweep">Home</a>
-            </li>
-            <li class="navbutton">
-                <a href="/my-work/" class="sweep current"  class="sweep">My work</a>
-            </li>
-            <li class="navbutton">
-                <a href="/about/"  class="sweep">About</a>
-            </li>
-            <li class="navbutton">
-                <a href="/contact/"  class="sweep">Contact</a>
-            </li>
 
-        </ul>
-    </div>
-    <div id="centred-container">
-        <div id="main">
-            <div id="content">
-                
-   <div class="card cf">
-    
-    <h1 class="title">My work
-    </h1>
-    
-    
-    <div class="inner-card">
-    <h2>Software portfolio</h2>
+    <div id="container">
+        <div id="sidebar">
+            <nav>
+                <a class="header" href="/">Jack Brookes</a>
+                <ul id="links">
+                    <li>
+                        <a href="/">Index</a>
+                    </li>
+                    <li>
+                        <a href="/my-work">My work</a>
+                    </li>
+                    <!-- <li>
+                        <a href="/posts">Posts</a>
+                    </li> -->
+                    <li>
+                        <a href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            &nbsp;
+        </div>
+
+        <div id="content">
+            <h1 id="my-work">My Work</h1>
+
+<h2 id="software-portfolio">Software portfolio</h2>
 
 <p>My open sourced work can be found at my <a href="http://github.com/jackbrookes">GitHub</a>.</p>
 
@@ -83,19 +70,19 @@
 <li><a href="https://github.com/jackbrookes/halo-reach-custom-gametypes">Halo custom gametype scripts</a> - Collection of my custom scripted gametypes for Halo: Reach, written in a Lua-like language.</li>
 </ul>
 
-<h2>Publications</h2>
+<h2 id="publications">Publications</h2>
 
 <p>Up-to-date list available on <a href="https://scholar.google.com/citations?user=0kwtpyoAAAAJ&amp;hl=en">Google Scholar</a>.</p>
 
-<h2>Unity experiments</h2>
+<h2 id="unity-experiments">Unity experiments</h2>
 
 <p>During my PhD and beyond I have developed several virtual reality experiments to examine human behaviour, mostly in the area of human sensorimotor decision making. All were developed in Unity and most take advantage of Unity Experiment Framework.</p>
 
-<h3>Unreleased project</h3>
+<h3 id="unreleased-project">Unreleased project</h3>
 
 <p>I am currently working at UCL building a platform for studying human movement within threatening VR scenarios. Alongside building statistical models of cognitive processes, this will allow us to study how humans manage to act so quickly in the face of fear, despite the complexity of the required movements.</p>
 
-<h3>Interceptive timing</h3>
+<h3 id="interceptive-timing">Interceptive timing</h3>
 
 <p>This task examines the interceptive timing ability of children and adults. Crucially, VR allows the task to be made 3D - which means we can more reliably discern spatial and temporal errors separately. The gamification of the interceptive timing task means children enjoy taking part in the studies.</p>
 
@@ -104,13 +91,13 @@
   Your browser does not support HTML5 video.
 </video></p>
 
-<h3>Intrinsic vs extrinsic costs in sensorimotor decision making</h3>
+<h3 id="intrinsic-vs-extrinsic-costs-in-sensorimotor-decision-making">Intrinsic vs extrinsic costs in sensorimotor decision making</h3>
 
 <p>Here we present participants with a series of choices between two objects. These objects differ in their <em>extrinsic</em> costs in terms of number of stars (i.e. points), and also their <em>intrinsic</em> costs because they have certain distance and timing constraints.</p>
 
 <p><img src="/static/image/bubbles.jpg" width="500"/></p>
 
-<h3>Postural sway assessment tool</h3>
+<h3 id="postural-sway-assessment-tool">Postural sway assessment tool</h3>
 
 <p>This task measures the participant's head position across three conditions: vision, no vision, and the oscillating room intervention. VR makes these manipulations easy, and allows researchers to examine the participants ability to use vision to adjust balance. This project is available free &amp; <a href="https://github.com/immersivecognition/posture-assessment-vr">open source</a>. </p>
 
@@ -119,7 +106,7 @@
   Your browser does not support HTML5 video.
 </video></p>
 
-<h3>Action-bandits</h3>
+<h3 id="action-bandits">Action-bandits</h3>
 
 <p>In my PhD I study how different types of errors (selection error, movement error) change the way we learn about our world. In this experiment, participants must physically swipe through one of two targets. Virtual Reality allows me to easily manipulate the rate of movement errors the participant believes they are making, by hiding the position of the hand when needed.  </p>
 
@@ -128,7 +115,7 @@
   Your browser does not support HTML5 video.
 </video></p>
 
-<h3>Prehension</h3>
+<h3 id="prehension">Prehension</h3>
 
 <p>Reach-to-grasp behaviours have been studied for decades, but only recently VR has allowed new experiments to be created. Here, we examine the effects of removing haptics or vision of the hand when reaching for an object using the VR experiment I developed.</p>
 
@@ -137,19 +124,19 @@
   Your browser does not support HTML5 video.
 </video></p>
 
-<h3>Haptic Handwriting</h3>
+<h3 id="haptic-handwriting">Haptic Handwriting</h3>
 
 <p>Handwriting is an important life skill, but many children underperform. Here I developed a simple handwriting task that allows children to virtually practice handwriting with haptic interventions that potentially improve learning rate. The Unity application communicates to a Phantom Omni haptic pen system. We tested this in a primary school, which was then featured on the BBC Inside Out program.</p>
 
 <p><img src="/static/image/handwriting.png" width="500"/></p>
 
-<h3>Golf</h3>
+<h3 id="golf">Golf</h3>
 
 <p>A great challenge in learning is understanding generalisation. Humans and other animals manage to quickly generalise abilities learned in one domain to another one. Virtual Reality poses a massive opportunity for training of skills ranging from surgery to customer service. For this to be useful, the skills learned in VR need to transfer to the real world. We are using this virtual reality golf task I developed to examine how we generalise skills learned in one medium to another.</p>
 
 <p><img src="/static/image/golf.png" width="500"/></p>
 
-<h3>Treasure chest bandits</h3>
+<h3 id="treasure-chest-bandits">Treasure chest bandits</h3>
 
 <p>Continuing the work done in my PhD on learning in the context of movement errors, I developed a similar task that removed the motor aspect of the task, and transformed it into a 2-stage decision making task. This is done on a computer monitor rather than in VR.</p>
 
@@ -158,7 +145,7 @@
   Your browser does not support HTML5 video.
 </video></p>
 
-<h3>Visuomotor adaptation</h3>
+<h3 id="visuomotor-adaptation">Visuomotor adaptation</h3>
 
 <p>A common motor learning experiment paradigm involves applying a transformation to the environment, such that movements are mapped to a cursor position in a novel way. Here I developed a VR version of this task, which opens up the possibility of developing interesting new interventions, and running these types of experiments on a larger scale.</p>
 
@@ -167,7 +154,7 @@
   Your browser does not support HTML5 video.
 </video></p>
 
-<h3>Paired associates memorisation</h3>
+<h3 id="paired-associates-memorisation">Paired associates memorisation</h3>
 
 <p>Memorising a pair of objects, and then recalling the second object after being prompted with the first, is a common way of measuring memory. I developed a VR version of this task, which uses realistic 3D objects rather than the classic image or word based tests in an attempt to be more ecologically valid. We use this task to examine the effects of sleep interventions on memory performance.</p>
 
@@ -176,66 +163,9 @@
   Your browser does not support HTML5 video.
 </video></p>
 
-    </div>
-</div>
-   <div class="card">
-  
-  <h2 class="section-title">
-    <a href="/contact/" class="arrow">Contact</a>
-  </h2>
-  
-
-    <div class="inner-card">
-    <ul class="contact">
-
-      <li title="twitter">
-        <a href="http://twitter.com/jackbrookes">
-          <i class="fa fa-twitter fa-fw" aria-hidden="true" style="color:#1da1f2"></i>
-          @jackbrookes
-        </a>
-     </li>
-
-      <li title="email">
-        <a href='mailto&#58;j%62ro%6Fke%7&#51;%31%38%37&#64;gmai%6C&#46;&#99;om'>
-          <i class="fa fa-envelope fa-fw" aria-hidden="true" style="color:#ffa930"></i>
-          j&#98;&#114;&#111;okes187&#64;gmail&#46;&#99;om
-        </a>
-      </li>
-
-      <li title="github">
-        <a href="http://github.com/jackbrookes">
-          <i class="fa fa-github fa-fw" aria-hidden="true" style="color:#4078c0"></i>
-          jackbrookes
-        </a>
-      </li>
-
-    </ul>
-  </div>
-</div>
-
-            </div>
+            <div id="footer">Jack Brookes &#169;2021</div>
         </div>
     </div>
-
-    </div>
-    <div id="footer-container">
-        <div id="footer">
-            
-            <ul class="footer-ul">
-                <li> <i class="fa fa-copyright" aria-hidden="true"></i> Jack Brookes 2021</li>
-                <li><a onclick="topFunction()" style="cursor:pointer">Back to top <i class="fa fa-fw fa-long-arrow-up" aria-hidden="true"></i></a></li>
-            </ul>
-            
-        </div>
-    </div>
-
-    <script>
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-    </script>
 
     <!-- Default Statcounter code for jbrookes.com http://jbrookes.com -->
     <script type="text/javascript">
@@ -246,9 +176,11 @@
         var sc_remove_link = 1;
     </script>
     <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
-    <noscript><div class="statcounter"><img class="statcounter"
-    src="https://c.statcounter.com/12132297/0/9e8bf11f/1/" alt="Web
-    Analytics"></div></noscript>
+    <noscript>
+        <div class="statcounter">
+            <img class="statcounter" src="https://c.statcounter.com/12132297/0/9e8bf11f/1/" alt="Web Analytics">
+        </div>
+    </noscript>
     <!-- End of Statcounter Code -->
 
 </body>

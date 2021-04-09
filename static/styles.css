@@ -1,0 +1,248 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+    color: rgb(25, 26, 27);
+    min-width: 320px;
+    width: calc( 100%);
+    max-width: calc( 100vw - 1em);
+}
+
+a {
+    color: inherit;
+    text-decoration: underline;
+    font-weight: 700;
+    -webkit-transition: color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
+}
+
+a:visited {
+    color: inherit;
+}
+
+a:hover {
+    color: #e81c4f;
+    -webkit-transition: color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
+}
+
+a:active {
+    color: #e81c4f;
+}
+
+pre {
+    padding: 0.5em 1em;
+    background: #f8f8f8;
+    overflow-x: auto;
+}
+
+code {
+    font-family: 'Fira Mono', monospace;
+}
+
+h1,
+h2,
+h3,
+strong {
+    color: rgb(34, 39, 46);
+}
+
+h1 {
+    font-size: 1.6em;
+}
+
+h2 {
+    font-size: 1.4em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+#container {
+    padding: 80px 0 20px 0;
+    position: relative;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+#container::after {
+    content: '\0020';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+#sidebar {
+    float: left;
+    width: 180px;
+    padding: 0 20px;
+}
+
+nav {
+    position: fixed;
+    width: 140px;
+}
+
+a.header {
+    font-size: 1.9em;
+    line-height: 110%;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+a.header::after {
+    content: '';
+    display: block;
+    height: 3px;
+    margin-top: 7px;
+    background-color: #e81c4f;
+}
+
+ul#links,
+ul.contact {
+    list-style: none outside;
+    padding-left: 0;
+}
+
+ul#links li a,
+ul.contact li a {
+    color: rgb(44, 47, 49);
+    text-decoration: none;
+    font-weight: 400;
+    display: block;
+    margin: 0.2em 0px;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
+}
+
+ul#links li a:hover,
+ul.contact li a:hover {
+    color: #e81c4f;
+    -webkit-transition: color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
+}
+
+#content {
+    margin: 0 auto;
+    width: 780px;
+    padding: 0 20px;
+    float: left;
+}
+
+#content p img,
+#content p video {
+    max-width: 100%;
+    max-height: 1500px;
+    margin: auto;
+    display: block;
+}
+
+#footer {
+    margin-top: 80px;
+    font-size: 0.8em;
+    color: rgb(89, 92, 95);
+    text-align: center;
+}
+
+@media only screen and (max-width: 960px) {
+    #container {
+        padding: 40px 0 20px 0;
+    }
+    #sidebar {
+        width: 100%;
+        float: none;
+    }
+    #content {
+        width: 100%;
+        float: none;
+    }
+    nav {
+        position: static;
+    }
+}
+
+@font-face {
+    /* inter-regular - latin */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/static/fonts/inter-v3-latin-regular.eot');
+    /* IE9 Compat Modes */
+    src: local(''), url('/static/fonts/inter-v3-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('/static/fonts/inter-v3-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('/static/fonts/inter-v3-latin-regular.woff') format('woff'), /* Modern Browsers */
+    url('/static/fonts/inter-v3-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('/static/fonts/inter-v3-latin-regular.svg#Inter') format('svg');
+    /* Legacy iOS */
+}
+
+@font-face {
+    /* inter-700 - latin */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/static/fonts/inter-v3-latin-700.eot');
+    /* IE9 Compat Modes */
+    src: local(''), url('/static/fonts/inter-v3-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('/static/fonts/inter-v3-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+    url('/static/fonts/inter-v3-latin-700.woff') format('woff'), /* Modern Browsers */
+    url('/static/fonts/inter-v3-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('/static/fonts/inter-v3-latin-700.svg#Inter') format('svg');
+    /* Legacy iOS */
+}
+
+@font-face {
+    /* fira-mono-regular - latin */
+    font-family: 'Fira Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/static/fonts/fira-mono-v9-latin-regular.eot');
+    /* IE9 Compat Modes */
+    src: local(''), url('/static/fonts/fira-mono-v9-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('/static/fonts/fira-mono-v9-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('/static/fonts/fira-mono-v9-latin-regular.woff') format('woff'), /* Modern Browsers */
+    url('/static/fonts/fira-mono-v9-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('/static/fonts/fira-mono-v9-latin-regular.svg#FiraMono') format('svg');
+    /* Legacy iOS */
+}
+
+@font-face {
+    /* fira-mono-700 - latin */
+    font-family: 'Fira Mono';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/static/fonts/fira-mono-v9-latin-700.eot');
+    /* IE9 Compat Modes */
+    src: local(''), url('/static/fonts/fira-mono-v9-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('/static/fonts/fira-mono-v9-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+    url('/static/fonts/fira-mono-v9-latin-700.woff') format('woff'), /* Modern Browsers */
+    url('/static/fonts/fira-mono-v9-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('/static/fonts/fira-mono-v9-latin-700.svg#FiraMono') format('svg');
+    /* Legacy iOS */
+}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="/static/pygments.css">
+    <link rel="shortcut icon" type="image/png" href="/static/me_circ.png">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ data['description'] }} - Jack Brookes">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@jackbrookes" />
+    <meta name="twitter:title" content="{{ metadata['title'] }} - Jack Brookes" />
+    <meta name="twitter:description" content="{{ data['description'] }} - Jack Brookes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ metadata['title'] }} - Jack Brookes</title>
+
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="sidebar">
+            <nav>
+                <a class="header" href="/">Jack Brookes</a>
+                <ul id="links">
+                    <li>
+                        <a href="/">Index</a>
+                    </li>
+                    <li>
+                        <a href="/my-work">My work</a>
+                    </li>
+                    <!-- <li>
+                        <a href="/posts">Posts</a>
+                    </li> -->
+                    <li>
+                        <a href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            &nbsp;
+        </div>
+
+        <div id="content">
+            {{ content }}
+            <div id="footer">Jack Brookes &#169;{{ data["current_year"] }}</div>
+        </div>
+    </div>
+
+    <!-- Default Statcounter code for jbrookes.com http://jbrookes.com -->
+    <script type="text/javascript">
+        var sc_project = 12132297;
+        var sc_invisible = 1;
+        var sc_security = "9e8bf11f";
+        var sc_https = 1;
+        var sc_remove_link = 1;
+    </script>
+    <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript>
+        <div class="statcounter">
+            <img class="statcounter" src="https://c.statcounter.com/12132297/0/9e8bf11f/1/" alt="Web Analytics">
+        </div>
+    </noscript>
+    <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
