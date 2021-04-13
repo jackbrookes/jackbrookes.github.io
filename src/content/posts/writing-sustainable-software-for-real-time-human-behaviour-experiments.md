@@ -31,8 +31,6 @@ font = pygame.font.SysFont(pygame.font.get_default_font(), 96)
 clock = pygame.time.Clock()
 screen.fill((255, 255, 255))
 
-pygame.time.wait(10000)
-
 for trial_num in trial_nums:
 
     if trial_num in (1, 6, 7):
