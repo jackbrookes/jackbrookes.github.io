@@ -10,32 +10,21 @@ class Builder(object):
     """
     Represents an buildable website.
     """
-    def __init__(self, template_path, content_dir, static_dir, data):
+    def __init__(self, template_path, content_dir, data):
         """
         Instantiate a new buildable website.
         """
 
         self.template_path = template_path
         self.content_dir = content_dir
-        self.static_dir = static_dir
         self.data = data
-        
-    def copy_static_files(self, output_dir):
-        """
-        Copy files from static directory to output static directory.
-        """
-
-        src = self.static_dir
-        dst = os.path.join(output_dir, self.static_dir)
-        copy_tree(src, dst)
 
     def build(self, output_dir):
         """
-        Begin the build process, copying static files, and converting all content/*.md
+        Begin the build process, and converting all content/*.md
         files into pages. 
         """
 
-        self.copy_static_files(output_dir)
         mds = glob.glob(os.path.join(self.content_dir, "**", "*.md"), recursive=True)
         for md in mds:
             is_index = md == os.path.join(self.content_dir, "index.md")
@@ -48,41 +37,40 @@ class Builder(object):
         """
 
         with open(self.template_path) as template_file:
-            with open(md_path) as md_file:
-                html_content = markdown2.markdown(
-                    md_file.read(),
-                    extras=["metadata", "fenced-code-blocks", "codehilite", "header-ids"]
-                )
-                replaced_html_content = replace_template(
-                    html_content,
-                    data=self.data,
-                    metadata=html_content.metadata
-                )
-                replaced_text = replace_template(
-                    template_file.read(),
-                    data=self.data,
-                    content=replaced_html_content,
-                    metadata=html_content.metadata
-                )
-                (parent, fname) = os.path.split(os.path.relpath(md_path))
-                fname_pure = fname.replace(".md", "")
+            html_content = markdown2.markdown_path(
+                md_path,
+                extras=["metadata", "fenced-code-blocks", "codehilite", "header-ids"]
+            )
+            replaced_html_content = replace_template(
+                html_content,
+                data=self.data,
+                metadata=html_content.metadata
+            )
+            replaced_text = replace_template(
+                template_file.read(),
+                data=self.data,
+                content=replaced_html_content,
+                metadata=html_content.metadata
+            )
+            (parent, fname) = os.path.split(os.path.relpath(md_path))
+            fname_pure = fname.replace(".md", "")
 
-                if is_index:
-                    newpath = os.path.join(
-                        output_dir,
-                        "index.html"
-                    )
-                else:
-                    newpath = os.path.join(
-                        output_dir,
-                        os.path.relpath(parent, start=self.content_dir),
-                        fname_pure,
-                        "index.html"
-                    )
-                
-                os.makedirs(os.path.dirname(newpath), exist_ok=True)
-                with open(newpath, "w+") as newf:
-                    newf.write(replaced_text)
+            if is_index:
+                newpath = os.path.join(
+                    output_dir,
+                    "index.html"
+                )
+            else:
+                newpath = os.path.join(
+                    output_dir,
+                    os.path.relpath(parent, start=self.content_dir),
+                    fname_pure,
+                    "index.html"
+                )
+            
+            os.makedirs(os.path.dirname(newpath), exist_ok=True)
+            with open(newpath, "w+") as newf:
+                newf.write(replaced_text)
                     
 def replace_template(text, **kwargs):
     """
@@ -94,18 +82,33 @@ def replace_template(text, **kwargs):
     matches = re.finditer(r"\{\{(.*?)\}\}", text)
     chars = list(text)
     for match in reversed(list(matches)):
-        replacement = eval(match.group(1), kwargs)
+        replacement = eval(match.group(1), {**kwargs, **globals()})
         s, e = match.span()
         chars[s:e] = replacement
     return ''.join(chars)
 
+def write_meta_date(metadata):
+    if "date" in metadata:
+        return f'<meta property="article:published_time" content={metadata["date"]} />'
+    else:
+      return ''
+
+def write_post_date(metadata):
+    if "date" in metadata:
+        return f'<p class="date">Published {metadata["date"]}</p>'
+    else:
+      return ''
 
 if __name__ == "__main__":
+    # use script directory
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
     data = yaml.load(open("constants.yaml"))
     post_files = glob.glob(os.path.join("content/posts/", "**", "*.md"), recursive=True)
-    post_titles = (markdown2.markdown(open(x).read(), extras=["metadata"]).metadata["title"] for x in post_files)
+    post_files = [f for f in post_files if os.path.split(f)[1] != "test.md"]
+    post_metadata = (markdown2.markdown_path(x, extras=["metadata"]).metadata for x in post_files)
     post_names = (os.path.split(os.path.relpath(x))[1].replace('.md', '') for x in post_files)
-    post_mds = (f"* [{title}]({name})" for title, name in zip(post_titles, post_names))
+    post_mds = (f"<tr><td>[{meta['title']}]({name})</td><td>{meta['date']}</td></tr>" for meta, name in zip(post_metadata, post_names))
 
     data["posts_list"] = markdown2.markdown('\n'.join(post_mds))
     data["current_year"] = str(datetime.datetime.now().year)
@@ -113,7 +116,6 @@ if __name__ == "__main__":
     builder = Builder(
         template_path="template.html",
         content_dir="content",
-        static_dir="static",
         data=data
     )
 

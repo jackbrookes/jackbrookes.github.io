@@ -8,10 +8,14 @@ body {
     line-height: 1.5;
     padding: 0;
     margin: 0;
-    color: rgb(25, 26, 27);
     min-width: 320px;
     width: calc( 100%);
     max-width: calc( 100vw - 1em);
+    color: rgb(34, 39, 46);
+}
+
+p {
+    word-wrap: break-word;
 }
 
 a {
@@ -41,6 +45,8 @@ a:active {
 }
 
 pre {
+    font-size: 14px;
+    line-height: 140%;
     padding: 0.5em 1em;
     background: #f8f8f8;
     overflow-x: auto;
@@ -48,13 +54,6 @@ pre {
 
 code {
     font-family: 'Fira Mono', monospace;
-}
-
-h1,
-h2,
-h3,
-strong {
-    color: rgb(34, 39, 46);
 }
 
 h1 {
@@ -161,6 +160,11 @@ ul.contact li a:hover {
     max-height: 1500px;
     margin: auto;
     display: block;
+}
+
+p.date {
+    margin-top: 3em;
+    text-align: right;
 }
 
 #footer {
