@@ -103,7 +103,7 @@ txt_green = "green"
 txt_blue = "blue"
 ```
 
-Now for our trials. We want to be able to represent the contents of the trial with code, and we could anything like a Dictionary or instance of a custom class. Here, I simply use a tuple (in Python, a tuple is an immutable list of objects) to define the independent variables (i.e. text and colour) on each trial, and store those in one large tuple containing all trials. 
+Now for our trials. We want to be able to represent the contents of the trial with code, and we could use anything like a Dictionary or instance of a custom class. Here, I simply use a tuple (in Python, a tuple is an immutable list of objects) to define the independent variables (i.e. text and colour) on each trial, and store those in one large tuple containing all trials. 
 
 ```python
 trials = (
