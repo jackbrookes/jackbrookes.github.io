@@ -8,16 +8,16 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Homepage of Jack Brookes" /> 
+    <meta name="description" content="Homepage of Jack Brookes" /> <meta property="article:published_time" content=2021-05-21 />
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@jackbrookes" />
     <meta name="twitter:creator" content="@jackbrookes" />
-    <meta name="twitter:title" content="Posts - Jack Brookes" />
+    <meta name="twitter:title" content="Third-person video recording in VR (with avatar) - Jack Brookes" />
     <meta name="twitter:description" content="Homepage of Jack Brookes" />
     <meta name="twitter:image" content="https://jbrookes.com/static/jbrookes-screenshot.png" />
 
-    <title>Posts - Jack Brookes</title>
+    <title>Third-person video recording in VR (with avatar) - Jack Brookes</title>
 
 </head>
 
@@ -52,14 +52,19 @@
         </div>
 
         <div id="content">
-            <h1 id="posts">Posts</h1>
+            <h1 id="third-person-video-recording-in-vr-with-avatar">Third-person video recording in VR (with avatar)</h1>
 
-<table style="width:100%">
-<p><tr><td><a href="third-person-video-recording-in-vr-avatar">Third-person video recording in VR (with avatar)</a></td><td>2021-05-21</td></tr>
-<tr><td><a href="writing-sustainable-software-for-real-time-human-behaviour-experiments">Writing sustainable software for real-time human behaviour experiments</a></td><td>2021-04-12</td></tr></p>
+<p>In traditional games, screen captures can show how the game looks to the player. However, in VR, communicating the feeling of being in an VR experience is hard. Screen captures of the player's first person view in a VR experience fall short because they are limited to 2D, often narrowed field of view, and include the janky head movements of the player. Humans have a remarkable ability to predict the effects of their own head and eye movements, effectively smoothing out their view in their brain. Whilst viewing the recording of a player's first person view, the viewer will not be able to take advantage of this ability and the video will not communicate the true immersiveness of the experience. </p>
 
-</table>
- 
+<p>A way to avoid this would be to take advantage another human ability, empathy. Film producers have long known that feelings can be transmitted to a viewer if they see a character experience an event on-screen. So, for VR experiences, we can record experiences from a third person perspective. <a href="https://www.liv.tv/">LIV</a> has built software to do this, and the "mixed reality" functionality is built into SteamVR and Oculus. When I tackled this issue back in 2017, these tools were less mature. Today, they are still somewhat cumbersome to set up if you are in a hurry. So I built a Unity package that simplifies this, and allows control of a virtual camera with a keyboard and mouse. That way, a friend can control the camera around you (visible as an avatar) and capture the view from that perspective. The package is simple with no dependencies.</p>
+
+<p><video controls width="500" muted>
+  <source src="/static/image/vr-demo-pack.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video></p>
+
+<p><a href="https://github.com/immersivecognition/vr-demo-pack">GitHub link</a></p>
+ <p class="date">Published 2021-05-21</p>
             <div id="footer">Jack Brookes &#169;2021</div>
         </div>
     </div>
