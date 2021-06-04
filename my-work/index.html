@@ -58,37 +58,44 @@
 
 <p>My open sourced work can be found at my <a href="http://github.com/jackbrookes">GitHub</a>.</p>
 
-<p>Notable public software:</p>
-
-<ul>
-<li><a href="http://immersivecognition.github.io/unity-experiment-framework">Unity Experiment Framework (UXF)</a> - Framework for human behaviour experiments in Unity, including enabling VR experiments and remote data collection.</li>
-<li><a href="https://github.com/immersivecognition/vr-demo-pack">VR Demo Pack</a> - Unity package that allows developers to add an avatar, viewable in 3rd person, to their task for presentation and video purposes.</li>
-<li><a href="https://github.com/jackbrookes/bouncebeat">BounceBeat</a> - VR musical physics sandbox game made in Unity.</li>
-<li><a href="https://github.com/jackbrookes/vr-graph-intersection">Unnamed concept VR game</a> - VR puzzle game where the goal is to create faces from nodes that do not create intersections in a 3D graph.</li>
-<li><a href="https://github.com/jackbrookes/eyeballs-vr-demo">Eyeballs VR Demo</a> - VR demo made in Unity that allows you to detach your eyes from your head.</li>
-<li><a href="https://jackbrookes.itch.io/isometricism">Isometricism</a> - Concept puzzle game where the visual perspective alters the paths the player can take.</li>
-</ul>
-
-<p><video controls width="500" muted>
-  <source src="/static/image/isometricism.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video></p>
-
-<ul>
-<li><a href="https://github.com/jackbrookes/halo-reach-custom-gametypes">Halo custom gametype scripts</a> - Collection of my custom scripted gametypes for Halo: Reach, written in a Lua-like language.</li>
-</ul>
-
-<h2 id="publications">Publications</h2>
+<h2 id="research-publications">Research publications</h2>
 
 <p>Up-to-date list available on <a href="https://scholar.google.com/citations?user=0kwtpyoAAAAJ&amp;hl=en">Google Scholar</a>.</p>
 
 <h2 id="unity-experiments">Unity experiments</h2>
 
-<p>During my PhD and beyond I have developed several virtual reality experiments to examine human behaviour, mostly in the area of human sensorimotor decision making. All were developed in Unity and most take advantage of Unity Experiment Framework.</p>
+<p>The <a href="http://immersivecognition.github.io/unity-experiment-framework">Unity Experiment Framework (UXF)</a> - Framework for human behaviour experiments in Unity, including enabling VR experiments and remote data collection. I developed it during my PC and have been continually updating it since then. It is open-source so people around the world can use it or even contribute changes. It includes complex systems for experiment flow and data collection in a set of easy-to-use Unity components. </p>
+
+<p>Core skills &amp; technologies:</p>
+
+<ul>
+<li>Unity C# API design</li>
+<li>Custom Unity Editor tools</li>
+<li>Multithreaded file I/O</li>
+<li>Communication with cloud databases (AWS)</li>
+<li>WebGL</li>
+<li>Dynamic user interfaces</li>
+<li>Extensive documentation</li>
+</ul>
+
+<p>During my PhD and beyond I have developed several virtual reality experiments to examine human behaviour, mostly in the area of human sensorimotor decision making. All were developed in Unity and with UXF.</p>
 
 <h3 id="unreleased-project">Unreleased project</h3>
 
-<p>I am currently working at UCL building a platform for studying human movement within threatening VR scenarios. Alongside building statistical models of cognitive processes, this will allow us to study how humans manage to act so quickly in the face of fear, despite the complexity of the required movements.</p>
+<p>I am currently working at UCL building a Unity platform for studying human movement within threatening VR scenarios. Alongside building statistical models of cognitive processes, this allows us to study how humans act so quickly in the face of fear, despite the complexity of the required movements. With this platform, we can easily create sequences of pre-planned events, including interactive elements, which allows each participant to experience a controlled encounter with a threat.</p>
+
+<p>Core skills &amp; technologies:</p>
+
+<ul>
+<li>Virtual Reality physics &amp; interaction</li>
+<li>Procedural animation (i.e. movement of animal 3D models)</li>
+<li>Custom shaders</li>
+<li>Performance optimisation (material combining, static batching, occlusion culling)</li>
+<li>Complex coroutine systems for dynamic event sequencing </li>
+<li>Custom Unity Editor tools</li>
+<li>Screen, camera, and microphone recording from Unity</li>
+<li>Unity Post Processing Stack v2 </li>
+</ul>
 
 <h3 id="interceptive-timing">Interceptive timing</h3>
 
@@ -98,6 +105,12 @@
   <source src="/static/image/interceptive-timing-vr.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video></p>
+
+<h3 id="golf-training">Golf training</h3>
+
+<p>A great challenge in learning is understanding generalisation. Humans and other animals manage to quickly generalise abilities learned in one domain to another one. Virtual Reality poses a massive opportunity for training of skills ranging from surgery to customer service. For this to be useful, the skills learned in VR need to transfer to the real world. We are using this virtual reality golf task I developed to examine how we generalise skills learned in one medium to another.</p>
+
+<p><img src="/static/image/golf.png" width="500"/></p>
 
 <h3 id="intrinsic-vs-extrinsic-costs-in-sensorimotor-decision-making">Intrinsic vs extrinsic costs in sensorimotor decision making</h3>
 
@@ -132,17 +145,20 @@
   Your browser does not support HTML5 video.
 </video></p>
 
+<h3 id="robotic-rehabilitation">Robotic rehabilitation</h3>
+
+<p>During my Masters project I developed a snake clone which is played by a robotic arm that communicates with Unity using real-time multiplayer networking technologies (TCP/UDP).</p>
+
+<p><video controls width="500" muted>
+  <source src="/static/image/snake.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video></p>
+
 <h3 id="haptic-handwriting">Haptic Handwriting</h3>
 
 <p>Handwriting is an important life skill, but many children underperform. Here I developed a simple handwriting task that allows children to virtually practice handwriting with haptic interventions that potentially improve learning rate. The Unity application communicates to a Phantom Omni haptic pen system. We tested this in a primary school, which was then featured on the BBC Inside Out program.</p>
 
 <p><img src="/static/image/handwriting.png" width="500"/></p>
-
-<h3 id="golf">Golf</h3>
-
-<p>A great challenge in learning is understanding generalisation. Humans and other animals manage to quickly generalise abilities learned in one domain to another one. Virtual Reality poses a massive opportunity for training of skills ranging from surgery to customer service. For this to be useful, the skills learned in VR need to transfer to the real world. We are using this virtual reality golf task I developed to examine how we generalise skills learned in one medium to another.</p>
-
-<p><img src="/static/image/golf.png" width="500"/></p>
 
 <h3 id="treasure-chest-bandits">Treasure chest bandits</h3>
 
@@ -170,6 +186,25 @@
   <source src="/static/image/paired-associates.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video></p>
+
+<h1 id="other-3dvr-software">Other 3D/VR software:</h1>
+
+<ul>
+<li><a href="https://github.com/immersivecognition/vr-demo-pack">VR Demo Pack</a> - Unity package that allows developers to add an avatar, viewable in 3rd person, to their task for presentation and video purposes.</li>
+<li><a href="https://github.com/jackbrookes/bouncebeat">BounceBeat</a> - VR musical physics sandbox game made in Unity.</li>
+<li><a href="https://github.com/jackbrookes/vr-graph-intersection">Unnamed concept VR game</a> - VR puzzle game where the goal is to create faces from nodes that do not create intersections in a 3D graph.</li>
+<li><a href="https://github.com/jackbrookes/eyeballs-vr-demo">Eyeballs VR Demo</a> - VR demo made in Unity that allows you to detach your eyes from your head.</li>
+<li><a href="https://jackbrookes.itch.io/isometricism">Isometricism</a> - Concept puzzle game where the visual perspective alters the paths the player can take.</li>
+</ul>
+
+<p><video controls width="500" muted>
+  <source src="/static/image/isometricism.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video></p>
+
+<ul>
+<li><a href="https://github.com/jackbrookes/halo-reach-custom-gametypes">Halo custom gametype scripts</a> - Collection of my custom scripted gametypes for Halo: Reach, written in a Lua-like language.</li>
+</ul>
  
             <div id="footer">Jack Brookes &#169;2021</div>
         </div>
