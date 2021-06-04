@@ -26,6 +26,7 @@ Core skills & technologies:
 * Communication with cloud databases (AWS)
 * WebGL
 * Dynamic user interfaces
+* Unit testing
 * Extensive documentation
 
 During my PhD and beyond I have developed several virtual reality experiments to examine human behaviour, mostly in the area of human sensorimotor decision making. All were developed in Unity and with UXF.
@@ -149,6 +150,6 @@ Memorising a pair of objects, and then recalling the second object after being p
 <video controls width="500" muted>
   <source src="/static/image/isometricism.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
-</video>
+</video>4
 
 * [Halo custom gametype scripts](https://github.com/jackbrookes/halo-reach-custom-gametypes) - Collection of my custom scripted gametypes for Halo: Reach, written in a Lua-like language.
