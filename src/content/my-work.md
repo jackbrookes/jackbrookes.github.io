@@ -34,7 +34,7 @@ During my PhD and beyond I have developed several virtual reality experiments to
 
 I am currently working at UCL building a Unity platform for studying human movement within threatening VR scenarios. Alongside building statistical models of cognitive processes, this allows us to study how humans act so quickly in the face of fear, despite the complexity of the required movements. With this platform, we can easily create sequences of pre-planned events, including interactive elements, which allows each participant to experience a controlled encounter with a threat.
 
-<img src="/static/image/vrthreat-panther.jpg" onclick="window.open(this.src, '_blank').focus()"/>
+<img src="/static/image/vrthreat-panther.jpg" onclick="window.open(this.src, '_blank').focus()" style="cursor: pointer;"/>
 
 Core skills & technologies:
 
@@ -66,7 +66,7 @@ A great challenge in learning is understanding generalisation. Humans and other 
 
 Here we present participants with a series of choices between two objects. These objects differ in their *extrinsic* costs in terms of number of stars (i.e. points), and also their *intrinsic* costs because they have certain distance and timing constraints.
 
-<img src="/static/image/bubbles.jpg" width="500" onclick="window.open(this.src, '_blank').focus()"/>
+<img src="/static/image/bubbles.jpg" width="500" onclick="window.open(this.src, '_blank').focus()" style="cursor: pointer;"/>
 
 ### Postural sway assessment tool
 
@@ -109,7 +109,7 @@ During my Masters project I developed a snake clone which is played by a robotic
 
 Handwriting is an important life skill, but many children underperform. Here I developed a simple handwriting task that allows children to virtually practice handwriting with haptic interventions that potentially improve learning rate. The Unity application communicates to a Phantom Omni haptic pen system. We tested this in a primary school, which was then featured on the BBC Inside Out program.
 
-<img src="/static/image/handwriting.png" width="500" onclick="window.open(this.src, '_blank').focus()"/> 
+<img src="/static/image/handwriting.png" width="500" onclick="window.open(this.src, '_blank').focus()" style="cursor: pointer;"/> 
 
 ### Treasure chest bandits
 
