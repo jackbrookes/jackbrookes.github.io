@@ -16,6 +16,8 @@ Up-to-date list available on [Google Scholar](https://scholar.google.com/citatio
 
 The [Unity Experiment Framework (UXF)](http://immersivecognition.github.io/unity-experiment-framework) - Framework for human behaviour experiments in Unity, including enabling VR experiments and remote data collection. I developed it during my PC and have been continually updating it since then. It is open-source so people around the world can use it or even contribute changes. It includes complex systems for experiment flow and data collection in a set of easy-to-use Unity components. 
 
+<img src="/static/image/uxf.png"/>
+
 Core skills & technologies:
 
 * Unity C# API design
@@ -28,9 +30,11 @@ Core skills & technologies:
 
 During my PhD and beyond I have developed several virtual reality experiments to examine human behaviour, mostly in the area of human sensorimotor decision making. All were developed in Unity and with UXF.
 
-### Unreleased project
+### VR Threat Toolkit (Unreleased)
 
 I am currently working at UCL building a Unity platform for studying human movement within threatening VR scenarios. Alongside building statistical models of cognitive processes, this allows us to study how humans act so quickly in the face of fear, despite the complexity of the required movements. With this platform, we can easily create sequences of pre-planned events, including interactive elements, which allows each participant to experience a controlled encounter with a threat.
+
+<img src="/static/image/vrthreat-panther.jpg" onclick="window.open(this.src, '_blank').focus()"/>
 
 Core skills & technologies:
 
@@ -62,7 +66,7 @@ A great challenge in learning is understanding generalisation. Humans and other 
 
 Here we present participants with a series of choices between two objects. These objects differ in their *extrinsic* costs in terms of number of stars (i.e. points), and also their *intrinsic* costs because they have certain distance and timing constraints.
 
-<img src="/static/image/bubbles.jpg" width="500"/>
+<img src="/static/image/bubbles.jpg" width="500" onclick="window.open(this.src, '_blank').focus()"/>
 
 ### Postural sway assessment tool
 
@@ -105,7 +109,7 @@ During my Masters project I developed a snake clone which is played by a robotic
 
 Handwriting is an important life skill, but many children underperform. Here I developed a simple handwriting task that allows children to virtually practice handwriting with haptic interventions that potentially improve learning rate. The Unity application communicates to a Phantom Omni haptic pen system. We tested this in a primary school, which was then featured on the BBC Inside Out program.
 
-<img src="/static/image/handwriting.png" width="500"/>
+<img src="/static/image/handwriting.png" width="500" onclick="window.open(this.src, '_blank').focus()"/> 
 
 ### Treasure chest bandits
 
