@@ -14,7 +14,7 @@ Up-to-date list available on [Google Scholar](https://scholar.google.com/citatio
 
 ## Unity experiments
 
-The [Unity Experiment Framework (UXF)](http://immersivecognition.github.io/unity-experiment-framework) - Framework for human behaviour experiments in Unity, including enabling VR experiments and remote data collection. I developed it during my PC and have been continually updating it since then. It is open-source so people around the world can use it or even contribute changes. It includes complex systems for experiment flow and data collection in a set of easy-to-use Unity components. 
+The [Unity Experiment Framework (UXF)](http://immersivecognition.github.io/unity-experiment-framework) - Framework for human behaviour experiments in Unity, including enabling VR experiments and remote data collection. I developed it during my PhD and have been continually updating it since then. It is open-source so people around the world can use it or even contribute changes. It includes complex systems for experiment flow and data collection in a set of easy-to-use Unity components. 
 
 <img src="/static/image/uxf.png"/>
 
@@ -150,6 +150,6 @@ Memorising a pair of objects, and then recalling the second object after being p
 <video controls width="500" muted>
   <source src="/static/image/isometricism.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
-</video>4
+</video>
 
 * [Halo custom gametype scripts](https://github.com/jackbrookes/halo-reach-custom-gametypes) - Collection of my custom scripted gametypes for Halo: Reach, written in a Lua-like language.
