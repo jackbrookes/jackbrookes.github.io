@@ -45,6 +45,7 @@ Core skills & technologies:
 * Performance optimisation (material combining, static batching, occlusion culling)
 * Complex coroutine systems for dynamic event sequencing 
 * Custom Unity Editor tools
+* Spatialised virtual audio
 * Screen, camera, and microphone recording from Unity
 * Unity Post Processing Stack v2 
 
