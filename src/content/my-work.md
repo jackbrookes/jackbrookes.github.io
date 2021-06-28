@@ -31,9 +31,9 @@ Core skills & technologies:
 
 During my PhD and beyond I have developed several virtual reality experiments to examine human behaviour, mostly in the area of human sensorimotor decision making. All were developed in Unity and with UXF.
 
-### VR Threat Toolkit (Unreleased)
+### VR Threat Toolkit (Ongoing)
 
-I am currently working at UCL building a Unity platform for studying human movement within threatening VR scenarios. Alongside building statistical models of cognitive processes, this allows us to study how humans act so quickly in the face of fear, despite the complexity of the required movements. With this platform, we can easily create sequences of pre-planned events, including interactive elements, which allows each participant to experience a controlled encounter with a threat.
+I am currently working at UCL building a Unity platform for studying human movement within threatening VR scenarios. Alongside building statistical models of cognitive processes, this allows us to study how humans act so quickly in the face of fear, despite the complexity of the required movements. With this platform, we can easily create sequences of pre-planned events, including interactive elements, which allows each participant to experience a controlled encounter with a virtual threat, whilst we collect movement and physiological data.
 
 <img src="/static/image/vrthreat-panther.jpg" onclick="window.open(this.src, '_blank').focus()" style="cursor: pointer;"/>
 
