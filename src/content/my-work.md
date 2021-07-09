@@ -12,7 +12,7 @@ My open sourced work can be found at my [GitHub](http://github.com/jackbrookes).
 
 Up-to-date list available on [Google Scholar](https://scholar.google.com/citations?user=0kwtpyoAAAAJ&hl=en).
 
-## Unity experiments
+## Unity projects
 
 The [Unity Experiment Framework (UXF)](http://immersivecognition.github.io/unity-experiment-framework) - Framework for human behaviour experiments in Unity, including enabling virtual reality experiments and remote data collection. It gives researchers easy-to-use tools to create applications to investigate how humans learn, move, and think. I developed it during my PhD, made it open source, and have been continually updating it since then. UXF includes complex systems for experiment flow and data collection in a set of simple Unity components. 
 
