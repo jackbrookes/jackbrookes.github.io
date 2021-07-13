@@ -14,7 +14,7 @@ Up-to-date list available on [Google Scholar](https://scholar.google.com/citatio
 
 ## Unity projects
 
-The [Unity Experiment Framework (UXF)](http://immersivecognition.github.io/unity-experiment-framework) - Framework for human behaviour experiments in Unity, including enabling virtual reality experiments and remote data collection. It gives researchers easy-to-use tools to create applications to investigate how humans learn, move, and think. I developed it during my PhD, made it open source, and have been continually updating it since then. UXF includes complex systems for experiment flow and data collection in a set of simple Unity components. 
+The [Unity Experiment Framework (UXF)](http://immersivecognition.github.io/unity-experiment-framework) is a software framework for developing virtual reality human behaviour experiments in Unity. It gives researchers easy-to-use tools to create applications to investigate how humans learn, move, and think. UXF includes complex systems for experiment flow and data collection in a set of simple Unity components. It supports virtual reality experiments, web browser based experiments, traditional screen-based experiments, and remote data collection by storing data in the cloud. I developed it during my PhD, made it open source, and have been continually updating it since then. 
 
 <img src="/static/image/uxf.png"/>
 
