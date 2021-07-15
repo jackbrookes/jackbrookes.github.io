@@ -56,7 +56,7 @@ Part of my PhD involved research into how surgical simulator system could be imp
 I also developed software for the MOOG Simodont Dental Trainer, which replicates the haptic sensations of many dental procedures. My software allows creation of "tasks" - blocks of virtual material with different levels of softness, which trainee dentists must learn to discriminate and drill out. My software is available [open source](https://github.com/jackbrookes/simodont-model-builder).
 
 <img src="/static/image/simodont.bmp" />
-<img src="/static/image/smb.png" />
+<img src="/static/image/smb.PNG" />
 
 ### Interceptive timing
 
