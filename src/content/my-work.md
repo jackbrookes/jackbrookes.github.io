@@ -12,7 +12,7 @@ My open sourced work can be found at my [GitHub](http://github.com/jackbrookes).
 
 Up-to-date list available on [Google Scholar](https://scholar.google.com/citations?user=0kwtpyoAAAAJ&hl=en).
 
-## Unity projects
+## Projects
 
 The [Unity Experiment Framework (UXF)](http://immersivecognition.github.io/unity-experiment-framework) is a software framework for developing virtual reality human behaviour experiments in Unity. It gives researchers easy-to-use tools to create applications to investigate how humans learn, move, and think. UXF includes complex systems for experiment flow and data collection in a set of simple Unity components. It supports virtual reality experiments, web browser based experiments, traditional screen-based experiments, and remote data collection by storing data in the cloud. I developed it during my PhD, made it open source, and have been continually updating it since then. 
 
@@ -48,6 +48,15 @@ Core skills & technologies:
 * Spatialised virtual audio
 * Screen, camera, and microphone recording from Unity
 * Unity Post Processing Stack v2 
+
+### VR / AR Surgical training
+
+Part of my PhD involved research into how surgical simulator system could be improved with haptic technology to enhance learning outcomes. I developed algorithms to apply assistive or disruptive forces to allow for practice matching an individual's skill level.
+
+I also developed software for the MOOG Simodont Dental Trainer, which replicates the haptic sensations of many dental procedures. My software allows creation of "tasks" - blocks of virtual material with different levels of softness, which trainee dentists must learn to discriminate and drill out. My software is available [open source](https://github.com/jackbrookes/simodont-model-builder).
+
+<img src="/static/image/simodont.bmp" />
+<img src="/static/image/smb.png" />
 
 ### Interceptive timing
 
