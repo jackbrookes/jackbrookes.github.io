@@ -51,7 +51,7 @@ Core skills & technologies:
 
 ### VR / AR Surgical training
 
-Part of my PhD involved research into how surgical simulator system could be improved with haptic technology to enhance learning outcomes. I developed algorithms to apply assistive or disruptive forces to allow for practice matching an individual's skill level.
+Part of my PhD involved research into how surgical simulator systems could be improved with haptic technology in order to enhance learning outcomes. I developed algorithms to apply assistive or disruptive forces to allow for practice matching an individual's skill level.
 
 I also developed software for the MOOG Simodont Dental Trainer, which replicates the haptic sensations of many dental procedures. My software allows creation of "tasks" - blocks of virtual material with different levels of softness, which trainee dentists must learn to discriminate and drill out. My software is available [open source](https://github.com/jackbrookes/simodont-model-builder).
 
