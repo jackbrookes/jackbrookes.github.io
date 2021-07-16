@@ -55,8 +55,8 @@ Part of my PhD involved research into how surgical simulator systems could be im
 
 I also developed software for the MOOG Simodont Dental Trainer, which replicates the haptic sensations of many dental procedures. My software allows creation of "tasks" - blocks of virtual material with different levels of softness, which trainee dentists must learn to discriminate and drill out. My software is available [open source](https://github.com/jackbrookes/simodont-model-builder).
 
-<img src="/static/image/simodont.bmp" />
-<img src="/static/image/smb.PNG" />
+<img src="/static/image/simodont.bmp" width="500" onclick="window.open(this.src, '_blank').focus()" style="cursor: pointer;"/> 
+<img src="/static/image/smb.PNG" width="500" onclick="window.open(this.src, '_blank').focus()" style="cursor: pointer;"/> 
 
 ### Interceptive timing
 
@@ -121,6 +121,7 @@ During my Masters project I developed a snake clone which is played by a robotic
 Handwriting is an important life skill, but many children underperform. Here I developed a simple handwriting task that allows children to virtually practice handwriting with haptic interventions that potentially improve learning rate. The Unity application communicates to a Phantom Omni haptic pen system. We tested this in a primary school, which was then featured on the BBC Inside Out program.
 
 <img src="/static/image/handwriting.png" width="500" onclick="window.open(this.src, '_blank').focus()" style="cursor: pointer;"/> 
+<img src="/static/image/bbc-vr-children-handwriting.png" width="500" onclick="window.open(this.src, '_blank').focus()" style="cursor: pointer;"/> 
 
 ### Treasure chest bandits
 
