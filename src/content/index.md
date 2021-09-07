@@ -2,7 +2,7 @@
 title: Index
 ---
 
-<img src="/static/me-circ.png"/>
+<img src="/static/jack-brookes-circle.png"/>
 
 # Hi
 
