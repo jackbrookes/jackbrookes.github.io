@@ -91,7 +91,7 @@ def write_meta_date(metadata):
     if "date" in metadata:
         return f'<meta property="article:published_time" content={metadata["date"]} />'
     else:
-      return ''
+        return ''
 
 def write_post_date(metadata):
     if "date" in metadata:
