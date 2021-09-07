@@ -1,3 +1,4 @@
+from codecs import encode
 import markdown2
 import yaml
 import re
@@ -36,7 +37,7 @@ class Builder(object):
         Build HTML page from markdown path. Creates a directory and index.html page.
         """
 
-        with open(self.template_path) as template_file:
+        with open(self.template_path, encoding="utf-8") as template_file:
             html_content = markdown2.markdown_path(
                 md_path,
                 extras=["metadata", "fenced-code-blocks", "codehilite", "header-ids"]
@@ -52,6 +53,7 @@ class Builder(object):
                 content=replaced_html_content,
                 metadata=html_content.metadata
             )
+
             (parent, fname) = os.path.split(os.path.relpath(md_path))
             fname_pure = fname.replace(".md", "")
 
@@ -67,9 +69,9 @@ class Builder(object):
                     fname_pure,
                     "index.html"
                 )
-            
             os.makedirs(os.path.dirname(newpath), exist_ok=True)
-            with open(newpath, "w+") as newf:
+            os.makedirs(os.path.dirname(newpath), exist_ok=True)
+            with open(newpath, "w+", encoding="utf-8") as newf:
                 newf.write(replaced_text)
                     
 def replace_template(text, **kwargs):
@@ -99,6 +101,17 @@ def write_post_date(metadata):
     else:
       return ''
 
+def generate_post_row(metadata, name):
+    """
+    Generates a table row for a given metadata.
+    """
+    return f'''
+    <tr>
+        <td><a href="{name}">{metadata["title"]}<a></td>
+        <td>{metadata["date"]}</td>
+    </tr>
+    '''
+
 if __name__ == "__main__":
     # use script directory
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -108,9 +121,9 @@ if __name__ == "__main__":
     post_files = [f for f in post_files if os.path.split(f)[1] != "test.md"]
     post_metadata = (markdown2.markdown_path(x, extras=["metadata"]).metadata for x in post_files)
     post_names = (os.path.split(os.path.relpath(x))[1].replace('.md', '') for x in post_files)
-    post_mds = (f"<tr><td>[{meta['title']}]({name})</td><td>{meta['date']}</td></tr>" for meta, name in zip(post_metadata, post_names))
+    post_rows = (generate_post_row(meta, name) for meta, name in zip(post_metadata, post_names))
 
-    data["posts_list"] = markdown2.markdown('\n'.join(post_mds))
+    data["posts_list"] = post_rows
     data["current_year"] = str(datetime.datetime.now().year)
 
     builder = Builder(
