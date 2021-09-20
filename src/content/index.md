@@ -13,3 +13,22 @@ I'm Jack, a programmer & researcher at UCL. I have a PhD in the area of cognitiv
 * Coding with craftsmanship: producing efficient, intuitive, and maintainable software
 * The study of human cognition, learning, & action
 * Data processing, modelling, visualisation, and analysis
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "name": "Jack Brookes",
+    "url": "http://jbrookes.com",
+    "jobTitle": "Software Developer",
+    "alumniOf": "University of Leeds",
+    "gender": "male",
+    "image": "/static/jack-brookes-circle.png",
+    "sameAs": [
+        "https://twitter.com/jackbrookes",
+        "https://www.linkedin.com/in/jack-brookes-74a404114/",
+        "https://github.com/jackbrookes",
+        "https://stackoverflow.com/users/5024009/jack-brookes"
+    ]
+}
+</script>
