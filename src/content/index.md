@@ -19,6 +19,8 @@ I'm Jack, a programmer & researcher at UCL. I have a PhD in the area of cognitiv
     "@context": "http://schema.org",
     "@type": "Person",
     "name": "Jack Brookes",
+    "givenName": "Jack",
+    "familyName": "Brookes",
     "url": "http://jbrookes.com",
     "jobTitle": "Software Developer",
     "alumniOf": "University of Leeds",
