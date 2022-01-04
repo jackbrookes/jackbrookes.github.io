@@ -81,8 +81,8 @@
 <li>The drag value assigned in the inspector is quite opaque, and it is not clear what the units are. It seems that the drag is <a href="https://forum.unity.com/threads/drag-factor-what-is-it.85504/#post-2005882">simply a multiplier for the velocity</a>, which asymptotes the velocity to zero as drag increases. To simulate it yourself:</li>
 </ul>
 
-<pre><code>body.velocity *= Mathf.Clamp01(1f - drag * Time.fixedDeltaTime);
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="n">body</span><span class="p">.</span><span class="n">velocity</span> <span class="p">*=</span> <span class="n">Mathf</span><span class="p">.</span><span class="n">Clamp01</span><span class="p">(</span><span class="m">1f</span> <span class="p">-</span> <span class="n">drag</span> <span class="p">*</span> <span class="n">Time</span><span class="p">.</span><span class="n">fixedDeltaTime</span><span class="p">);</span>
+</code></pre></div>
  <p class="date">Published 2022-01-04</p>
             <div id="footer">Jack Brookes &#169;2022</div>
         </div>

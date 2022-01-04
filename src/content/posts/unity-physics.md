@@ -22,6 +22,6 @@ date: 2022-01-04
 
 * The drag value assigned in the inspector is quite opaque, and it is not clear what the units are. It seems that the drag is [simply a multiplier for the velocity](https://forum.unity.com/threads/drag-factor-what-is-it.85504/#post-2005882), which asymptotes the velocity to zero as drag increases. To simulate it yourself:
 
-```cs
+```csharp
 body.velocity *= Mathf.Clamp01(1f - drag * Time.fixedDeltaTime);
 ```
