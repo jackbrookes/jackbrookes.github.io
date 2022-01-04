@@ -121,7 +121,8 @@ if __name__ == "__main__":
     post_files = [f for f in post_files if os.path.split(f)[1] != "test.md"]
     post_metadata = (markdown2.markdown_path(x, extras=["metadata"]).metadata for x in post_files)
     post_names = (os.path.split(os.path.relpath(x))[1].replace('.md', '') for x in post_files)
-    post_rows = (generate_post_row(meta, name) for meta, name in zip(post_metadata, post_names))
+    posts = sorted(zip(post_metadata, post_names), key=lambda v: v[0]["date"], reverse=True)
+    post_rows = (generate_post_row(meta, name) for meta, name in posts)
 
     data["posts_list"] = post_rows
     data["current_year"] = str(datetime.datetime.now().year)
