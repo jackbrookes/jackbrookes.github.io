@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Game of Life 3D - Unity WebGL</title>
+</head>
+
+<body>
+    <script src="Build/Build.loader.js"></script>
+    <canvas id="unity-container" style="width: 100%; height: 100%;">
+    </canvas>
+
+    <script>
+        var unityContainer = document.getElementById("unity-container");
+
+        var customProgress = function(progress) {
+            console.log(progress);
+        };
+
+        // Unity Initialization
+        createUnityInstance(unityContainer, {
+            dataUrl: "Build/Build.data.gz",
+            frameworkUrl: "Build/Build.framework.js.gz",
+            codeUrl: "Build/Build.wasm.gz",
+            streamingAssetsUrl: "StreamingAssets",
+            companyName: "Jack Brookes",
+            productName: "GameOfLife3D",
+            productVersion: "0.1",
+        }, customProgress).then((unityInstance) => {
+            window.unityInstance = unityInstance; // store the object globally
+        })
+    </script>
+
+</body>
+
+</html>

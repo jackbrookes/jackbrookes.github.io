@@ -1,0 +1,260 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="/static/pygments.css">
+    <link rel="shortcut icon" type="image/png" href="/static/jack-brookes-circle.png" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Homepage of Jack Brookes" />
+    <meta property="article:published_time" content=2021-04-12 />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@jackbrookes" />
+    <meta name="twitter:creator" content="@jackbrookes" />
+    <meta name="twitter:title" content="Writing sustainable software for real-time human behaviour experiments — Jack Brookes" />
+    <meta name="twitter:description" content="Homepage of Jack Brookes" />
+    <meta name="twitter:image" content="https://jbrookes.com/static/jbrookes-screenshot.png" />
+    <meta charset="UTF-8">
+
+    <title>Writing sustainable software for real-time human behaviour experiments — Jack Brookes</title>
+
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="sidebar">
+            <nav>
+                <a class="header" href="/">Jack Brookes</a>
+                <ul id="links">
+                    <li>
+                        <a href="/">Index</a>
+                    </li>
+                    <li>
+                        <a href="/my-work">My work</a>
+                    </li>
+                    <li>
+                        <a href="/posts">Posts</a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/jackbrookes">Twitter</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/jackbrookes">GitHub</a>
+                    </li>
+                    <li>
+                        <a href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            &nbsp;
+        </div>
+
+        <div id="content">
+            <h1 id="writing-sustainable-software-for-real-time-human-behaviour-experiments">Writing sustainable software for real-time human behaviour experiments</h1>
+
+<p>Software is a core component of modern science. It comes in the form of scripts that can process, visualise, and model data, or, as real-time software that runs during an experiment. When we use experiments to investigate human behaviour, real-time software can automate the experiment procedure, reduce the burden on the researcher in presenting stimuli, as well as making experiments more consistent. When done right, this makes experiments more reproducible, and reduces the risk of external factors interacting with the experiment's effects.</p>
+
+<p>However, software in science is often written to meet a short-term demands, or created by individuals who (though no fault of their own) have little prior experience writing software. As we look towards a future where software and reproducibility become even more crucial in science, it is important we ensure the software we write is "sustainable". Indeed, the <a href="https://www.software.ac.uk/about/manifesto">Software Sustainability Institute</a> has been set up to lobby for recognition of the role software plays in science.</p>
+
+<h2 id="sustainability">Sustainability</h2>
+
+<p>My definition of sustainable experiment software is code that not only meets the immediate demands of the task, but is also:</p>
+
+<ul>
+<li>Readable, allowing researchers to properly interpret their data, cross-referencing with the task mechanics. </li>
+<li>And maintainable, allowing for future experiments to easily build upon or modify the codebase. </li>
+</ul>
+
+<p>Let's first look at an example of some typical experiment code. Here, I have created a simple task to investigate the <a href="https://en.wikipedia.org/wiki/Stroop_effect">Stroop effect</a>. Colour words (e.g. "red", "green", "blue") are displayed in a font coloured either matching or not matching the text itself. Participants must respond by speaking aloud the colour of the word. The experiment typically finds that responses from participants take more time when the word does not match the colour itself. The code below is a basic Python script using <code>pygame</code> for graphics.</p>
+
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">pygame</span>
+
+<span class="c1"># 9 trials numbered 1-9</span>
+<span class="n">trial_nums</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Setup</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">))</span>
+<span class="n">font</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">SysFont</span><span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">get_default_font</span><span class="p">(),</span> <span class="mi">96</span><span class="p">)</span>
+<span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+<span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">trial_num</span> <span class="ow">in</span> <span class="n">trial_nums</span><span class="p">:</span>
+
+    <span class="k">if</span> <span class="n">trial_num</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">):</span>
+        <span class="n">colour</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># red</span>
+    <span class="k">elif</span> <span class="n">trial_num</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
+        <span class="n">colour</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># green</span>
+    <span class="k">elif</span> <span class="n">trial_num</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">):</span>
+        <span class="n">colour</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span> <span class="c1"># blue</span>
+
+    <span class="k">if</span> <span class="n">trial_num</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span>
+    <span class="k">elif</span> <span class="n">trial_num</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span>
+    <span class="k">elif</span> <span class="n">trial_num</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span>
+
+    <span class="c1"># Create text</span>
+    <span class="n">text_img</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="n">colour</span><span class="p">)</span>
+    <span class="n">text_rect</span> <span class="o">=</span> <span class="n">text_img</span><span class="o">.</span><span class="n">get_rect</span><span class="p">()</span>
+    <span class="n">text_rect</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">240</span><span class="p">)</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">text_img</span><span class="p">,</span> <span class="n">text_rect</span><span class="p">)</span>
+
+    <span class="n">end_time</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_ticks</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1000</span> <span class="c1"># 1.0 second</span>
+    <span class="k">while</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_ticks</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">end_time</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="k">pass</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+
+    <span class="c1"># Create blank screen</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+
+    <span class="n">end_time</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_ticks</span><span class="p">()</span> <span class="o">+</span> <span class="mi">500</span> <span class="c1"># 0.5 seconds</span>
+    <span class="k">while</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_ticks</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">end_time</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="k">pass</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+</code></pre></div>
+
+<p>The code does what it needs to. It displays "red", "green" or "blue" in a (seemingly) random order with different colours, for a total of 9 trials. The text displays for 1 second, then a blank screen displays for 0.5 seconds. Here's a video, try to say (out loud) the colour of the text.</p>
+
+<p><video controls width="500" muted>
+  <source src="/static/image/stroop.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video></p>
+
+<p>The code for this task isn't very "sustainable". Some criticisms:</p>
+
+<ul>
+<li>It is not immediately clear what is shown to the participant on each trial. You can work it out, by looking at the <code>if</code> code blocks that are run where <code>trial_num</code> is <code>1</code>, but it may take time and is prone to human error. </li>
+<li>A naive researcher may change the <code>trial_nums</code> to <code>range(1, 19)</code> to double the number of trials, but this won't work correctly, and even worse, there will be no error messages to help the researcher!</li>
+<li>Changing the order of the stimuli presentation would require re-coding the internal <code>if</code> statements.</li>
+<li>Adding more complexity (new words, colours) would drastically increase the number of lines of code, and break the original version of the experiment.</li>
+</ul>
+
+<h2 id="improvements">Improvements</h2>
+
+<p>Even though this is a toy example, there are things we can improve. My ethos when writing experiment software is to separate the experiment code into two parts:</p>
+
+<ul>
+<li>Experiment specification: Building or describing the experiment structure, including the independent variable values on each trial.</li>
+<li>Experiment implementation: Presenting stimuli according to independent variables using calls to your presentation engine, as well as collecting any dependent variables.</li>
+</ul>
+
+<p>This separation forms a substantial part of the way that my experimental design framework <a href="http://immersivecognition.com/unity-experiment-framework/">UXF</a> works. </p>
+
+<p>We can begin with the improvements by creating a means of experiment specification. First, we can store our stimuli as variables, so that they can easily be referenced, or modified.</p>
+
+<div class="codehilite"><pre><span></span><code><span class="n">clr_red</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">clr_green</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">clr_blue</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+<span class="n">txt_red</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span>
+<span class="n">txt_green</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span>
+<span class="n">txt_blue</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span>
+</code></pre></div>
+
+<p>Now for our trials. We want to be able to represent the contents of the trial with code, and we could use anything like a Dictionary or instance of a custom class. Here, I simply use a tuple (in Python, a tuple is an immutable list of objects) to define the independent variables (i.e. text and colour) on each trial, and store those in one large tuple containing all trials. </p>
+
+<div class="codehilite"><pre><span></span><code><span class="n">trials</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="c1"># colour,   text</span>
+    <span class="p">(</span><span class="n">clr_red</span><span class="p">,</span>   <span class="n">txt_green</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">clr_green</span><span class="p">,</span> <span class="n">txt_red</span>  <span class="p">),</span>
+    <span class="p">(</span><span class="n">clr_blue</span><span class="p">,</span>  <span class="n">txt_blue</span> <span class="p">),</span>
+    <span class="p">(</span><span class="n">clr_blue</span><span class="p">,</span>  <span class="n">txt_red</span>  <span class="p">),</span>
+    <span class="p">(</span><span class="n">clr_green</span><span class="p">,</span> <span class="n">txt_blue</span> <span class="p">),</span>
+    <span class="p">(</span><span class="n">clr_red</span><span class="p">,</span>   <span class="n">txt_green</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">clr_red</span><span class="p">,</span>   <span class="n">txt_blue</span> <span class="p">),</span>
+    <span class="p">(</span><span class="n">clr_green</span><span class="p">,</span> <span class="n">txt_green</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">clr_blue</span><span class="p">,</span>  <span class="n">txt_red</span>  <span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<p>Hopefully you can see here how this is much more readable - each row represents a trial, with the two items representing the colour and text respectively. This means we can now simplify the experiment implementation, by looping over the trials, getting rid of the <code>if</code> statements inside the stimuli display part of our code:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="k">for</span> <span class="n">trial</span> <span class="ow">in</span> <span class="n">trials</span><span class="p">:</span>
+    <span class="c1"># Grab independent variables from the trial</span>
+    <span class="n">colour</span> <span class="o">=</span> <span class="n">trial</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">trial</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># Create text</span>
+    <span class="n">text_img</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="n">colour</span><span class="p">)</span>
+    <span class="n">text_rect</span> <span class="o">=</span> <span class="n">text_img</span><span class="o">.</span><span class="n">get_rect</span><span class="p">()</span>
+    <span class="n">text_rect</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">240</span><span class="p">)</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">text_img</span><span class="p">,</span> <span class="n">text_rect</span><span class="p">)</span>
+
+    <span class="n">end_time</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_ticks</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1000</span> <span class="c1"># 1.0 second</span>
+    <span class="k">while</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_ticks</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">end_time</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="k">pass</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+
+    <span class="c1"># Create blank screen</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+
+    <span class="n">end_time</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_ticks</span><span class="p">()</span> <span class="o">+</span> <span class="mi">500</span> <span class="c1"># 0.5 seconds</span>
+    <span class="k">while</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_ticks</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">end_time</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="k">pass</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+</code></pre></div>
+
+<p>With this separation now achieved, it should be clear how easy it is for researchers to modify the number of trials or order they are presented in. But this gives us more power than we had before - we can replace our hard-coded trials with more sophisticated means of generating trials. For example, we may want to generate every combination of colour and text, and shuffle the resulting trials. We can easily do this with nested <code>for</code> loops:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">trials</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">colour</span> <span class="ow">in</span> <span class="p">(</span><span class="n">clr_red</span><span class="p">,</span> <span class="n">clr_green</span><span class="p">,</span> <span class="n">clr_blue</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="p">(</span><span class="n">txt_red</span><span class="p">,</span> <span class="n">txt_green</span><span class="p">,</span> <span class="n">txt_blue</span><span class="p">):</span>
+        <span class="n">trials</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">colour</span><span class="p">,</span> <span class="n">text</span><span class="p">))</span>
+
+<span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">trials</span><span class="p">)</span>
+</code></pre></div>
+
+<p>(<a href="https://gist.github.com/jackbrookes/812ac589f250fbcb27eb8c1522caa6ad">Full code for updated task</a>)</p>
+
+<p>Notice this change requires no knowledge of <code>pygame</code>, and we didn't need to touch the core loop at all. With this separation of specification and implementation, our code is much more robust, and is easy to read and change in the future. 
+Hopefully you appreciate how this method has more value as the experiment is scaled up. Imagine the mess of an experiment with dozens of different independent variables, all defined in <code>if</code> statements littered throughout the code. Here, a trial object can contain as many variables as required, and the presentation code can access them as needed. The presentation code ("experiment implementation") in a sense has been purposely made to be dumb, and it is unconcerned with which trial it is currently presenting. This way, the experiment specification can change in any way see fit without the presentation code having to be tweaked at all. </p>
+
+<h2 id="further-suggestions">Further suggestions</h2>
+
+<p>To further separate the code, there are a couple more suggestions I would have that could be worth implementing:</p>
+
+<ul>
+<li>Split the code across (at least) 2 separate files, so that changes to trial order or number do not require accessing of the presentation code.</li>
+<li>Allow for trials to be specified in a <code>csv</code> file, which is parsed into a trial list on start-up. Researchers can modify the <code>csv</code> file to easily change the trials. </li>
+<li>Implement a cascading settings system. For example, a setting for a trial would override a setting applied to a block of trials. This type of system <a href="https://github.com/immersivecognition/unity-experiment-framework/wiki/Settings-system#cascading-requests">exists in UXF</a>.</li>
+<li>Some experiments have a closed loop design, where trials may be added or changed based on actions in the previous trials. In this case, only partial separation may be possible.</li>
+<li>You can use the same trial objects to save dependent variables (i.e. participant responses). In UXF, this is done with the <a href="https://github.com/immersivecognition/unity-experiment-framework/wiki/Data-collection#behavioural-data">behavioural data collection system</a>.</li>
+<li>At the end of the task, you can write code to export the trial list (including results) as a <code>csv</code> file, so you can easily analyse responses to changes in independent variables.</li>
+</ul>
+
+<p>Happy coding!</p>
+ <p class="date">Published 2021-04-12</p>
+            <div id="footer">Jack Brookes &#169;2022</div>
+        </div>
+    </div>
+
+    <!-- Default Statcounter code for jbrookes.com http://jbrookes.com -->
+    <script type="text/javascript">
+        var sc_project = 12132297;
+        var sc_invisible = 1;
+        var sc_security = "9e8bf11f";
+        var sc_https = 1;
+        var sc_remove_link = 1;
+    </script>
+    <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript>
+        <div class="statcounter">
+            <img class="statcounter" src="https://c.statcounter.com/12132297/0/9e8bf11f/1/" alt="Web Analytics">
+        </div>
+    </noscript>
+    <!-- End of Statcounter Code -->
+
+</body>
+
+</html>

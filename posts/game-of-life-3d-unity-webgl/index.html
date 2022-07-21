@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="/static/pygments.css">
+    <link rel="shortcut icon" type="image/png" href="/static/jack-brookes-circle.png" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Homepage of Jack Brookes" />
+    <meta property="article:published_time" content=2022-07-22 />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@jackbrookes" />
+    <meta name="twitter:creator" content="@jackbrookes" />
+    <meta name="twitter:title" content="Game of Life 3D in Unity WebGL — Jack Brookes" />
+    <meta name="twitter:description" content="Homepage of Jack Brookes" />
+    <meta name="twitter:image" content="https://jbrookes.com/static/jbrookes-screenshot.png" />
+    <meta charset="UTF-8">
+
+    <title>Game of Life 3D in Unity WebGL — Jack Brookes</title>
+
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="sidebar">
+            <nav>
+                <a class="header" href="/">Jack Brookes</a>
+                <ul id="links">
+                    <li>
+                        <a href="/">Index</a>
+                    </li>
+                    <li>
+                        <a href="/my-work">My work</a>
+                    </li>
+                    <li>
+                        <a href="/posts">Posts</a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/jackbrookes">Twitter</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/jackbrookes">GitHub</a>
+                    </li>
+                    <li>
+                        <a href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            &nbsp;
+        </div>
+
+        <div id="content">
+            <h1 id="game-of-life-3d-in-unity-webgl">Game of Life 3D in Unity WebGL</h1>
+
+<p>I created a 3D Game Of Life in Unity WebGL. It includes several changes from the 2D Game Of Life:
+* It uses a 3D grid instead of a 2D grid.
+* Neighbourhood is now a cube instead of a square (up to 28 neighbours).
+* Thresholds for the rules are set to more sensible values for 3D, but can be customised.
+* We render cells as small spheres so that we can see them better.
+* You can move around and rotate the camera with WASD/Mouse.</p>
+
+<p><video controls width="700" muted>
+  <source src="/static/image/game-of-life.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video></p>
+
+<p>Each cell is initially occupied based on a probability. You can try the demo in browser with the link below:</p>
+
+<p><a href="/fun/game-of-life-3d">Play Game of Life 3D</a></p>
+
+<p>The source code is on GitHub:</p>
+
+<p><a href="https://github.com/jackbrookes/game-of-life-3d-unity/tree/main/Assets/Scripts">View on GitHub</a></p>
+ <p class="date">Published 2022-07-22</p>
+            <div id="footer">Jack Brookes &#169;2022</div>
+        </div>
+    </div>
+
+    <!-- Default Statcounter code for jbrookes.com http://jbrookes.com -->
+    <script type="text/javascript">
+        var sc_project = 12132297;
+        var sc_invisible = 1;
+        var sc_security = "9e8bf11f";
+        var sc_https = 1;
+        var sc_remove_link = 1;
+    </script>
+    <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript>
+        <div class="statcounter">
+            <img class="statcounter" src="https://c.statcounter.com/12132297/0/9e8bf11f/1/" alt="Web Analytics">
+        </div>
+    </noscript>
+    <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
