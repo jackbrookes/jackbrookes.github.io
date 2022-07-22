@@ -8,7 +8,7 @@ date: 2022-07-22
 I created a 3D Game Of Life in Unity WebGL. It includes several changes from the 2D Game Of Life:
 
 * It uses a 3D grid instead of a 2D grid.
-* Neighbourhood is now a cube instead of a square (up to 28 neighbours).
+* Neighbourhood is now a cube instead of a square (up to 26 neighbours).
 * Thresholds for the rules are set to more sensible values for 3D, but can be customised.
 * We render cells as small spheres so that we can see them better.
 * You can move around and rotate the camera with WASD/Mouse.
