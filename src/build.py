@@ -116,7 +116,7 @@ if __name__ == "__main__":
     # use script directory
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-    data = yaml.load(open("constants.yaml"))
+    data = yaml.full_load(open("constants.yaml"))
     post_files = glob.glob(os.path.join("content/posts/", "**", "*.md"), recursive=True)
     post_files = [f for f in post_files if os.path.split(f)[1] != "test.md"]
     post_metadata = (markdown2.markdown_path(x, extras=["metadata"]).metadata for x in post_files)

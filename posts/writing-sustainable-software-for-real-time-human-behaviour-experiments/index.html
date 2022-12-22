@@ -37,9 +37,6 @@
                         <a href="/my-work">My work</a>
                     </li>
                     <li>
-                        <a href="/posts">Posts</a>
-                    </li>
-                    <li>
                         <a href="https://twitter.com/jackbrookes">Twitter</a>
                     </li>
                     <li>
@@ -71,55 +68,55 @@
 
 <p>Let's first look at an example of some typical experiment code. Here, I have created a simple task to investigate the <a href="https://en.wikipedia.org/wiki/Stroop_effect">Stroop effect</a>. Colour words (e.g. "red", "green", "blue") are displayed in a font coloured either matching or not matching the text itself. Participants must respond by speaking aloud the colour of the word. The experiment typically finds that responses from participants take more time when the word does not match the colour itself. The code below is a basic Python script using <code>pygame</code> for graphics.</p>
 
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">pygame</span>
+<pre><code>import pygame
 
-<span class="c1"># 9 trials numbered 1-9</span>
-<span class="n">trial_nums</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+# 9 trials numbered 1-9
+trial_nums = range(1, 10)
 
-<span class="c1"># Setup</span>
-<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">))</span>
-<span class="n">font</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">SysFont</span><span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">get_default_font</span><span class="p">(),</span> <span class="mi">96</span><span class="p">)</span>
-<span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
-<span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+# Setup
+pygame.init()
+screen = pygame.display.set_mode((640, 480))
+font = pygame.font.SysFont(pygame.font.get_default_font(), 96)
+clock = pygame.time.Clock()
+screen.fill((255, 255, 255))
 
-<span class="k">for</span> <span class="n">trial_num</span> <span class="ow">in</span> <span class="n">trial_nums</span><span class="p">:</span>
+for trial_num in trial_nums:
 
-    <span class="k">if</span> <span class="n">trial_num</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">):</span>
-        <span class="n">colour</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># red</span>
-    <span class="k">elif</span> <span class="n">trial_num</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
-        <span class="n">colour</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># green</span>
-    <span class="k">elif</span> <span class="n">trial_num</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">):</span>
-        <span class="n">colour</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span> <span class="c1"># blue</span>
+    if trial_num in (1, 6, 7):
+        colour = (255, 0, 0) # red
+    elif trial_num in (2, 5, 8):
+        colour = (0, 255, 0) # green
+    elif trial_num in (3, 4, 9):
+        colour = (0, 0, 255) # blue
 
-    <span class="k">if</span> <span class="n">trial_num</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">):</span>
-        <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span>
-    <span class="k">elif</span> <span class="n">trial_num</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
-        <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span>
-    <span class="k">elif</span> <span class="n">trial_num</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">):</span>
-        <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span>
+    if trial_num in (2, 4, 9):
+        text = "red"
+    elif trial_num in (1, 6, 8):
+        text = "green"
+    elif trial_num in (3, 5, 7):
+        text = "blue"
 
-    <span class="c1"># Create text</span>
-    <span class="n">text_img</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="n">colour</span><span class="p">)</span>
-    <span class="n">text_rect</span> <span class="o">=</span> <span class="n">text_img</span><span class="o">.</span><span class="n">get_rect</span><span class="p">()</span>
-    <span class="n">text_rect</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">240</span><span class="p">)</span>
-    <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">text_img</span><span class="p">,</span> <span class="n">text_rect</span><span class="p">)</span>
+    # Create text
+    text_img = font.render(text, True, colour)
+    text_rect = text_img.get_rect()
+    text_rect.center = (320, 240)
+    screen.blit(text_img, text_rect)
 
-    <span class="n">end_time</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_ticks</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1000</span> <span class="c1"># 1.0 second</span>
-    <span class="k">while</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_ticks</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">end_time</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
-            <span class="k">pass</span>
-        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+    end_time = pygame.time.get_ticks() + 1000 # 1.0 second
+    while pygame.time.get_ticks() &lt; end_time:
+        for event in pygame.event.get():
+            pass
+        pygame.display.flip()
 
-    <span class="c1"># Create blank screen</span>
-    <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+    # Create blank screen
+    screen.fill((255, 255, 255))
 
-    <span class="n">end_time</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_ticks</span><span class="p">()</span> <span class="o">+</span> <span class="mi">500</span> <span class="c1"># 0.5 seconds</span>
-    <span class="k">while</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_ticks</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">end_time</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
-            <span class="k">pass</span>
-        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
-</code></pre></div>
+    end_time = pygame.time.get_ticks() + 500 # 0.5 seconds
+    while pygame.time.get_ticks() &lt; end_time:
+        for event in pygame.event.get():
+            pass
+        pygame.display.flip()
+</code></pre>
 
 <p>The code does what it needs to. It displays "red", "green" or "blue" in a (seemingly) random order with different colours, for a total of 9 trials. The text displays for 1 second, then a blank screen displays for 0.5 seconds. Here's a video, try to say (out loud) the colour of the text.</p>
 
@@ -150,70 +147,70 @@
 
 <p>We can begin with the improvements by creating a means of experiment specification. First, we can store our stimuli as variables, so that they can easily be referenced, or modified.</p>
 
-<div class="codehilite"><pre><span></span><code><span class="n">clr_red</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">clr_green</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">clr_blue</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
-<span class="n">txt_red</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span>
-<span class="n">txt_green</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span>
-<span class="n">txt_blue</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span>
-</code></pre></div>
+<pre><code>clr_red = (255, 0, 0)
+clr_green = (0, 255, 0)
+clr_blue = (0, 0, 255)
+txt_red = "red"
+txt_green = "green"
+txt_blue = "blue"
+</code></pre>
 
 <p>Now for our trials. We want to be able to represent the contents of the trial with code, and we could use anything like a Dictionary or instance of a custom class. Here, I simply use a tuple (in Python, a tuple is an immutable list of objects) to define the independent variables (i.e. text and colour) on each trial, and store those in one large tuple containing all trials. </p>
 
-<div class="codehilite"><pre><span></span><code><span class="n">trials</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="c1"># colour,   text</span>
-    <span class="p">(</span><span class="n">clr_red</span><span class="p">,</span>   <span class="n">txt_green</span><span class="p">),</span>
-    <span class="p">(</span><span class="n">clr_green</span><span class="p">,</span> <span class="n">txt_red</span>  <span class="p">),</span>
-    <span class="p">(</span><span class="n">clr_blue</span><span class="p">,</span>  <span class="n">txt_blue</span> <span class="p">),</span>
-    <span class="p">(</span><span class="n">clr_blue</span><span class="p">,</span>  <span class="n">txt_red</span>  <span class="p">),</span>
-    <span class="p">(</span><span class="n">clr_green</span><span class="p">,</span> <span class="n">txt_blue</span> <span class="p">),</span>
-    <span class="p">(</span><span class="n">clr_red</span><span class="p">,</span>   <span class="n">txt_green</span><span class="p">),</span>
-    <span class="p">(</span><span class="n">clr_red</span><span class="p">,</span>   <span class="n">txt_blue</span> <span class="p">),</span>
-    <span class="p">(</span><span class="n">clr_green</span><span class="p">,</span> <span class="n">txt_green</span><span class="p">),</span>
-    <span class="p">(</span><span class="n">clr_blue</span><span class="p">,</span>  <span class="n">txt_red</span>  <span class="p">)</span>
-<span class="p">)</span>
-</code></pre></div>
+<pre><code>trials = (
+    # colour,   text
+    (clr_red,   txt_green),
+    (clr_green, txt_red  ),
+    (clr_blue,  txt_blue ),
+    (clr_blue,  txt_red  ),
+    (clr_green, txt_blue ),
+    (clr_red,   txt_green),
+    (clr_red,   txt_blue ),
+    (clr_green, txt_green),
+    (clr_blue,  txt_red  )
+)
+</code></pre>
 
 <p>Hopefully you can see here how this is much more readable - each row represents a trial, with the two items representing the colour and text respectively. This means we can now simplify the experiment implementation, by looping over the trials, getting rid of the <code>if</code> statements inside the stimuli display part of our code:</p>
 
-<div class="codehilite"><pre><span></span><code><span class="k">for</span> <span class="n">trial</span> <span class="ow">in</span> <span class="n">trials</span><span class="p">:</span>
-    <span class="c1"># Grab independent variables from the trial</span>
-    <span class="n">colour</span> <span class="o">=</span> <span class="n">trial</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="n">trial</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<pre><code>for trial in trials:
+    # Grab independent variables from the trial
+    colour = trial[0]
+    text = trial[1]
 
-    <span class="c1"># Create text</span>
-    <span class="n">text_img</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="n">colour</span><span class="p">)</span>
-    <span class="n">text_rect</span> <span class="o">=</span> <span class="n">text_img</span><span class="o">.</span><span class="n">get_rect</span><span class="p">()</span>
-    <span class="n">text_rect</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">240</span><span class="p">)</span>
-    <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">text_img</span><span class="p">,</span> <span class="n">text_rect</span><span class="p">)</span>
+    # Create text
+    text_img = font.render(text, True, colour)
+    text_rect = text_img.get_rect()
+    text_rect.center = (320, 240)
+    screen.blit(text_img, text_rect)
 
-    <span class="n">end_time</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_ticks</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1000</span> <span class="c1"># 1.0 second</span>
-    <span class="k">while</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_ticks</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">end_time</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
-            <span class="k">pass</span>
-        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+    end_time = pygame.time.get_ticks() + 1000 # 1.0 second
+    while pygame.time.get_ticks() &lt; end_time:
+        for event in pygame.event.get():
+            pass
+        pygame.display.flip()
 
-    <span class="c1"># Create blank screen</span>
-    <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+    # Create blank screen
+    screen.fill((255, 255, 255))
 
-    <span class="n">end_time</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_ticks</span><span class="p">()</span> <span class="o">+</span> <span class="mi">500</span> <span class="c1"># 0.5 seconds</span>
-    <span class="k">while</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_ticks</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">end_time</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
-            <span class="k">pass</span>
-        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
-</code></pre></div>
+    end_time = pygame.time.get_ticks() + 500 # 0.5 seconds
+    while pygame.time.get_ticks() &lt; end_time:
+        for event in pygame.event.get():
+            pass
+        pygame.display.flip()
+</code></pre>
 
 <p>With this separation now achieved, it should be clear how easy it is for researchers to modify the number of trials or order they are presented in. But this gives us more power than we had before - we can replace our hard-coded trials with more sophisticated means of generating trials. For example, we may want to generate every combination of colour and text, and shuffle the resulting trials. We can easily do this with nested <code>for</code> loops:</p>
 
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
+<pre><code>import random
 
-<span class="n">trials</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">colour</span> <span class="ow">in</span> <span class="p">(</span><span class="n">clr_red</span><span class="p">,</span> <span class="n">clr_green</span><span class="p">,</span> <span class="n">clr_blue</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="p">(</span><span class="n">txt_red</span><span class="p">,</span> <span class="n">txt_green</span><span class="p">,</span> <span class="n">txt_blue</span><span class="p">):</span>
-        <span class="n">trials</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">colour</span><span class="p">,</span> <span class="n">text</span><span class="p">))</span>
+trials = []
+for colour in (clr_red, clr_green, clr_blue):
+    for text in (txt_red, txt_green, txt_blue):
+        trials.append((colour, text))
 
-<span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">trials</span><span class="p">)</span>
-</code></pre></div>
+random.shuffle(trials)
+</code></pre>
 
 <p>(<a href="https://gist.github.com/jackbrookes/812ac589f250fbcb27eb8c1522caa6ad">Full code for updated task</a>)</p>
 
